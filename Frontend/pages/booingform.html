@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../styles/global.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="booking-form" class="container">
+        <nav class="navbar">
+            <div class="logo">Hotel Management</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Rooms</a>
+                <a href="#">Booking</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+        <div class="card">
+            <h2>Book Your Stay</h2>
+            <form>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <select required>
+                        <option>Standard Room</option>
+                        <option>Deluxe Room</option>
+                        <option>Suite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button class="btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

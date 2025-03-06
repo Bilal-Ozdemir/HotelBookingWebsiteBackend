@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BackEnd"
+    "\\BackEnd",
+    "\\BackEnd\\BackEnd",
+    "\\BackEnd\\BackEnd\\Data"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd.sln",
+  "SelectedNode": "\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

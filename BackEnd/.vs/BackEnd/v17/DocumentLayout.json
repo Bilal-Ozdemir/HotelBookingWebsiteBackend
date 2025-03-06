@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,20 +35,12 @@
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,6 +67,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs",
+              "RelativeToolTip": "BackEnd\\Migrations\\20250306081100_AddUserPaymentBookingRoomTypeRelationships.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T08:11:00.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "HotelRoom.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\HotelRoom.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\HotelRoom.cs",
@@ -70,12 +87,11 @@
               "RelativeToolTip": "BackEnd\\Models\\HotelRoom.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T08:00:11.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T08:00:11.155Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\Payment.cs",
@@ -83,12 +99,11 @@
               "RelativeToolTip": "BackEnd\\Models\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:37:10.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T07:37:10.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "RoomType.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\RoomType.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\RoomType.cs",
@@ -96,12 +111,11 @@
               "RelativeToolTip": "BackEnd\\Models\\RoomType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:34:50.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T07:34:50.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\User.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\User.cs",
@@ -114,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "BackEnd\\Data\\AppDbContext.cs",
@@ -127,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\appsettings.json",
               "RelativeDocumentMoniker": "BackEnd\\appsettings.json",
@@ -140,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Program.cs",
               "RelativeDocumentMoniker": "BackEnd\\Program.cs",
@@ -148,12 +162,11 @@
               "RelativeToolTip": "BackEnd\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:57:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T06:57:09.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\Booking.cs",
@@ -161,12 +174,11 @@
               "RelativeToolTip": "BackEnd\\Models\\Booking.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:56:45.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T06:56:45.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "BackEnd\\Models\\Admin.cs",
@@ -174,8 +186,7 @@
               "RelativeToolTip": "BackEnd\\Models\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:56:40.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T06:56:40.918Z"
             }
           ]
         }

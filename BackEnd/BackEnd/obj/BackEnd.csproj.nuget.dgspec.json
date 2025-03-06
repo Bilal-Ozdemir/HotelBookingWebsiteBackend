@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acidc\\Desktop\\HotelBookingSystem\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acidc\\Desktop\\HotelBookingSystem\\BackEnd\\BackEnd\\BackEnd.csproj": {
+    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acidc\\Desktop\\HotelBookingSystem\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\acidc\\Desktop\\HotelBookingSystem\\BackEnd\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\acidc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acidc\\Desktop\\HotelBookingSystem\\BackEnd\\BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\Bilal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acidc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bilal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,17 +34,22 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -70,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

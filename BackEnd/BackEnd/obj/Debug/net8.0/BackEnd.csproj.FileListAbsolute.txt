@@ -167,3 +167,5 @@ C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\obj\Debug\net8.0\refint\Back
 C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\obj\Debug\net8.0\BackEnd.pdb
 C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\obj\Debug\net8.0\BackEnd.genruntimeconfig.cache
 C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\obj\Debug\net8.0\ref\BackEnd.dll
+C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Bilal\Desktop\hotelwebsite\BackEnd\Backend\bin\Debug\net8.0\BCrypt.Net-Next.dll

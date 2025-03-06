@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using BackEnd.BackEnd.Models; 
-
+using BackEnd.BackEnd.Models;
+using Microsoft.AspNetCore.Identity;
 namespace BackEnd.BackEnd.Data  
 {
     public class AppDbContext : DbContext
@@ -14,6 +14,42 @@ namespace BackEnd.BackEnd.Data
         public DbSet<Payment> Payments { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
 
+        public async Task EnsureSeedData(IServiceProvider services)
+        {
+            using (var scope = services.CreateScope())
+            {
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Admin>>();
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+                const string adminEmail = "admin@example.com";
+                const string adminPassword = "Admin@123";
+
+                // Check if the admin role exists; if not, create it
+                if (!await roleManager.RoleExistsAsync("Admin"))
+                {
+                    await roleManager.CreateAsync(new IdentityRole("Admin"));
+                }
+
+                // Check if the admin user already exists
+                if (await userManager.FindByEmailAsync(adminEmail) == null)
+                {
+                    var adminUser = new Admin
+                    {
+                        UserName = adminEmail,
+                        Email = adminEmail,
+                        EmailConfirmed = true // Confirm the email automatically
+                    };
+
+                    var result = await userManager.CreateAsync(adminUser, adminPassword);
+
+                    if (result.Succeeded)
+                    {
+                        // Assign admin role
+                        await userManager.AddToRoleAsync(adminUser, "Admin");
+                    }
+                }
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Admin and User is a 1 to 1 relation
@@ -63,6 +99,33 @@ namespace BackEnd.BackEnd.Data
                 .HasForeignKey(hr => hr.RoomTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Seed Data
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, Username = "john_doe", Email = "john@example.com", PasswordHash = "hashed_password_1" },
+                new User { Id = 2, Username = "jane_smith", Email = "jane@example.com", PasswordHash = "hashed_password_2" }
+            );
+
+            modelBuilder.Entity<RoomType>().HasData(
+                new RoomType { Id = 1, Name = "Single", Description = "A room for one person." },
+                new RoomType { Id = 2, Name = "Double", Description = "A room for two people." },
+                new RoomType { Id = 3, Name = "Suite", Description = "A spacious room with a separate living area." }
+            );
+
+            modelBuilder.Entity<HotelRoom>().HasData(
+                new HotelRoom { Id = 1, RoomNumber = "101", RoomTypeId = 1, Price = 100.00m },
+                new HotelRoom { Id = 2, RoomNumber = "102", RoomTypeId = 2, Price = 150.00m },
+                new HotelRoom { Id = 3, RoomNumber = "201", RoomTypeId = 3, Price = 250.00m }
+            );
+
+            modelBuilder.Entity<Booking>().HasData(
+                new Booking { Id = 1, UserId = 1, RoomId = 1, CheckIn = new DateTime(2025, 3, 8), CheckOut = new DateTime(2025, 3, 12) },
+                new Booking { Id = 2, UserId = 2, RoomId = 2, CheckIn = new DateTime(2025, 3, 9), CheckOut = new DateTime(2025, 3, 13) }
+            );
+
+            modelBuilder.Entity<Payment>().HasData(
+                new Payment { Id = 1, BookingId = 1, UserId = 1, Amount = 400.00m, PaymentDate = new DateTime(2025, 3, 8), PaymentMethod = "Credit Card" },
+                new Payment { Id = 2, BookingId = 2, UserId = 2, Amount = 600.00m, PaymentDate = new DateTime(2025, 3, 9), PaymentMethod = "PayPal" }
+            );
         }
     }
 }

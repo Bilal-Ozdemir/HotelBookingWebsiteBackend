@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./../styles/global.css" />
+  <title>User Registration</title>
+</head>
+<body>
+  <div id="user-registration" class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="homePage.html" style="color: inherit; text-decoration: none;">Hotel Management</a>
+      </div>
+      <div class="nav-links">
+        <a href="homePage.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="bookingform.html">Booking</a>
+        <a href="contact.html">Contact</a>
+        <a href="userLogin.html">Login</a>
+        <a href="userRegistration.html">Register</a>
+      </div>
+    </nav>
+    <div class="card">
+      <h2>User Registration</h2>
+      <form>
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p>Already have an account? <a href="userLogin.html">Login here</a></p>
+    </div>
+  </div>
+</body>
+</html>

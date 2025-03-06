@@ -340,3 +340,8 @@ C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\obj\De
 C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\obj\Debug\net8.0\BackEnd.pdb
 C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\obj\Debug\net8.0\BackEnd.genruntimeconfig.cache
 C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\obj\Debug\net8.0\ref\BackEnd.dll
+C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Josh\Documents\GitHub\HotelBookingWebsiteBackend\BackEnd\BackEnd\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

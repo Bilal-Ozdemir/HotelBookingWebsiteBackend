@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEnd.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250306081100_AddUserPaymentBookingRoomTypeRelationships")]
-    partial class AddUserPaymentBookingRoomTypeRelationships
+    [Migration("20250306195519_addedSeedDataAndAdminLogin")]
+    partial class addedSeedDataAndAdminLogin
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,16 +33,55 @@ namespace BackEnd.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -79,6 +118,24 @@ namespace BackEnd.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Bookings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CheckIn = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOut = new DateTime(2025, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            RoomId = 1,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CheckIn = new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CheckOut = new DateTime(2025, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            RoomId = 2,
+                            UserId = 2
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.BackEnd.Models.HotelRoom", b =>
@@ -104,6 +161,29 @@ namespace BackEnd.Migrations
                     b.HasIndex("RoomTypeId");
 
                     b.ToTable("HotelRooms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Price = 100.00m,
+                            RoomNumber = "101",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Price = 150.00m,
+                            RoomNumber = "102",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Price = 250.00m,
+                            RoomNumber = "201",
+                            RoomTypeId = 3
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.BackEnd.Models.Payment", b =>
@@ -137,6 +217,26 @@ namespace BackEnd.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Payments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 400.00m,
+                            BookingId = 1,
+                            PaymentDate = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PaymentMethod = "Credit Card",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 600.00m,
+                            BookingId = 2,
+                            PaymentDate = new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PaymentMethod = "PayPal",
+                            UserId = 2
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.BackEnd.Models.RoomType", b =>
@@ -158,6 +258,26 @@ namespace BackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RoomTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "A room for one person.",
+                            Name = "Single"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "A room for two people.",
+                            Name = "Double"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "A spacious room with a separate living area.",
+                            Name = "Suite"
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.BackEnd.Models.User", b =>
@@ -183,6 +303,22 @@ namespace BackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "john@example.com",
+                            PasswordHash = "hashed_password_1",
+                            Username = "john_doe"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "jane@example.com",
+                            PasswordHash = "hashed_password_2",
+                            Username = "jane_smith"
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.BackEnd.Models.Admin", b =>

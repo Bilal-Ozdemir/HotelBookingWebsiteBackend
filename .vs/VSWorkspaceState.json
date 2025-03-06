@@ -3,8 +3,11 @@
     "",
     "\\BackEnd",
     "\\BackEnd\\BackEnd",
-    "\\BackEnd\\BackEnd\\Data"
+    "\\BackEnd\\BackEnd\\Data",
+    "\\BackEnd\\BackEnd\\Models",
+    "\\Frontend",
+    "\\Frontend\\pages"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
+  "SelectedNode": "\\BackEnd\\BackEnd\\Models\\User.cs",
   "PreviewInSolutionExplorer": false
 }

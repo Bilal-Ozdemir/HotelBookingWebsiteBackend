@@ -1,9 +1,10 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace BackEnd.BackEnd.Models
 {
-    public class Admin
+    public class Admin : IdentityUser
     {
         public int Id { get; set; }
 

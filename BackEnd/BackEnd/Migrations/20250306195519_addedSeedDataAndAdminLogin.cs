@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class AddUserPaymentBookingRoomTypeRelationships : Migration
+    public partial class addedSeedDataAndAdminLogin : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -69,7 +71,20 @@ namespace BackEnd.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -137,6 +152,53 @@ namespace BackEnd.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "RoomTypes",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "A room for one person.", "Single" },
+                    { 2, "A room for two people.", "Double" },
+                    { 3, "A spacious room with a separate living area.", "Suite" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "PasswordHash", "Username" },
+                values: new object[,]
+                {
+                    { 1, "john@example.com", "hashed_password_1", "john_doe" },
+                    { 2, "jane@example.com", "hashed_password_2", "jane_smith" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "HotelRooms",
+                columns: new[] { "Id", "Price", "RoomNumber", "RoomTypeId" },
+                values: new object[,]
+                {
+                    { 1, 100.00m, "101", 1 },
+                    { 2, 150.00m, "102", 2 },
+                    { 3, 250.00m, "201", 3 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Bookings",
+                columns: new[] { "Id", "CheckIn", "CheckOut", "RoomId", "UserId" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1 },
+                    { 2, new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Payments",
+                columns: new[] { "Id", "Amount", "BookingId", "PaymentDate", "PaymentMethod", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 400.00m, 1, new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Credit Card", 1 },
+                    { 2, 600.00m, 2, new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "PayPal", 2 }
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "ExpandedNodes": [
     "",
@@ -10,4 +11,17 @@
   ],
   "SelectedNode": "\\BackEnd\\BackEnd\\Models\\User.cs",
   "PreviewInSolutionExplorer": false
+=======
+{
+  "ExpandedNodes": [
+    "",
+    "\\BackEnd",
+    "\\BackEnd\\BackEnd",
+    "\\Frontend",
+    "\\Frontend\\pages",
+    "\\Frontend\\styles"
+  ],
+  "SelectedNode": "\\Frontend\\pages\\adminDashBoard.html",
+  "PreviewInSolutionExplorer": false
+>>>>>>> feature/register-login
 }

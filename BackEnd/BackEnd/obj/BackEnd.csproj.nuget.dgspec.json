@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj": {}
+    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj": {
+    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\BackEnd.csproj",
+        "projectPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Bilal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bilal\\AppData\\Roaming\\NuGet\\NuGet.Config",

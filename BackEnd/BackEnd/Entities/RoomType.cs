@@ -1,4 +1,4 @@
-﻿namespace BackEnd.BackEnd.Models
+﻿namespace BackEnd.Entities
 {
     public class RoomType
     {
@@ -7,6 +7,6 @@
         public string Description { get; set; }
 
         // Nav property
-        public ICollection<HotelRoom> HotelRooms { get; set; } 
+        public ICollection<HotelRoom> HotelRooms { get; set; }
     }
 }

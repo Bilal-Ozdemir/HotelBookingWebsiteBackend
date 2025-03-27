@@ -3,44 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\auth\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\auth\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\hotelroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\hotelroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\auth\\generatejwttoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\auth\\generatejwttoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\auth\\registeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\auth\\registeruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\payments\\deletepayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\payments\\deletepayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\payments\\updatepayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\payments\\updatepayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\payments\\createpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\payments\\createpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\payments\\getpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\payments\\getpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\usecases\\payments\\getpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\usecases\\payments\\getpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,132 +66,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Controllers\\BookingController.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "BackEnd\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:07:08.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HotelRoom.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\HotelRoom.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\HotelRoom.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\HotelRoom.cs",
-              "RelativeToolTip": "BackEnd\\Models\\HotelRoom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Title": "GenerateJwtToken.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\GenerateJwtToken.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Auth\\GenerateJwtToken.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\GenerateJwtToken.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Auth\\GenerateJwtToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T08:00:11.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\Payment.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Payment.cs",
-              "RelativeToolTip": "BackEnd\\Models\\Payment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:37:10.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RoomType.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\RoomType.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\RoomType.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\RoomType.cs",
-              "RelativeToolTip": "BackEnd\\Models\\RoomType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:34:50.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\User.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\User.cs",
-              "RelativeToolTip": "BackEnd\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:12:53.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "BackEnd\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:09:41.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\appsettings.json",
-              "RelativeDocumentMoniker": "BackEnd\\appsettings.json",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\appsettings.json",
-              "RelativeToolTip": "BackEnd\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-06T06:57:17.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Program.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Program.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Program.cs",
-              "RelativeToolTip": "BackEnd\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:57:09.007Z",
+              "WhenOpened": "2025-03-27T19:42:31.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\Booking.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Booking.cs",
-              "RelativeToolTip": "BackEnd\\Models\\Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Title": "LoginUser.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\LoginUser.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Auth\\LoginUser.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\LoginUser.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Auth\\LoginUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:56:45.679Z",
+              "WhenOpened": "2025-03-27T19:42:07.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterUser.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\RegisterUser.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Auth\\RegisterUser.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Auth\\RegisterUser.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Auth\\RegisterUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:41:45.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BackEnd\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:40:49.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeletePayment.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\DeletePayment.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Payments\\DeletePayment.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\DeletePayment.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Payments\\DeletePayment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:38:52.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdatePayment.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\UpdatePayment.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Payments\\UpdatePayment.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\UpdatePayment.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Payments\\UpdatePayment.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:38:16.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreatePayment.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\CreatePayment.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Payments\\CreatePayment.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\CreatePayment.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Payments\\CreatePayment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:37:42.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetPayment.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\GetPayment.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Payments\\GetPayment.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\GetPayment.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Payments\\GetPayment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:37:08.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetPayments.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\GetPayments.cs",
+              "RelativeDocumentMoniker": "BackEnd\\UseCases\\Payments\\GetPayments.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\UseCases\\Payments\\GetPayments.cs",
+              "RelativeToolTip": "BackEnd\\UseCases\\Payments\\GetPayments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:36:30.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Models\\Admin.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Models\\Admin.cs",
-              "RelativeToolTip": "BackEnd\\Models\\Admin.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAYwAwAAAAlAAAAAAAAAA==",
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "BackEnd\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T06:56:40.918Z",
+              "WhenOpened": "2025-03-27T19:35:17.824Z",
               "EditorCaption": ""
             }
           ]

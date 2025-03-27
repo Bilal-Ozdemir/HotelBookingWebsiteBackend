@@ -1,5 +1,5 @@
 ﻿using BackEnd.BackEnd.Data;
-using BackEnd.BackEnd.Models;
+using BackEnd.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,7 +1,8 @@
-﻿using BackEnd.BackEnd.Data;
-using BackEnd.BackEnd.Models;
+﻿using BackEnd.Entities;
+using BackEnd.UseCases.Payments; // Ensure this namespace matches your project structure
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BackEnd.Controllers
 {
@@ -9,37 +10,43 @@ namespace BackEnd.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly GetPayments _getPayments;
+        private readonly GetPayment _getPayment;
+        private readonly CreatePayment _createPayment;
+        private readonly UpdatePayment _updatePayment;
+        private readonly DeletePayment _deletePayment;
 
-        public PaymentController(AppDbContext context)
+        public PaymentController(
+            GetPayments getPayments,
+            GetPayment getPayment,
+            CreatePayment createPayment,
+            UpdatePayment updatePayment,
+            DeletePayment deletePayment)
         {
-            _context = context;
+            _getPayments = getPayments;
+            _getPayment = getPayment;
+            _createPayment = createPayment;
+            _updatePayment = updatePayment;
+            _deletePayment = deletePayment;
         }
 
         // GET: api/payment
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Payment>>> GetPayments()
         {
-            return await _context.Payments
-                .Include(p => p.Booking)
-                .Include(p => p.User) // Include user details if necessary
-                .ToListAsync();
+            var payments = await _getPayments.Execute();
+            return Ok(payments);
         }
 
         // GET: api/payment/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Payment>> GetPayment(int id)
         {
-            var payment = await _context.Payments
-                .Include(p => p.Booking)
-                .Include(p => p.User) // Include user details if necessary
-                .FirstOrDefaultAsync(p => p.Id == id);
-
+            var payment = await _getPayment.Execute(id);
             if (payment == null)
             {
                 return NotFound();
             }
-
             return Ok(payment);
         }
 
@@ -47,85 +54,49 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<Payment>> CreatePayment([FromBody] Payment payment)
         {
-            // Check if the booking exists
-            var booking = await _context.Bookings.FindAsync(payment.BookingId);
-            if (booking == null)
+            try
             {
-                return BadRequest("Booking not found.");
+                var createdPayment = await _createPayment.Execute(payment);
+                return CreatedAtAction(nameof(GetPayment), new { id = createdPayment.Id }, createdPayment);
             }
-
-            payment.PaymentDate = DateTime.UtcNow; // Set the payment date to now
-            _context.Payments.Add(payment);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetPayment), new { id = payment.Id }, payment);
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT: api/payment/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePayment(int id, [FromBody] Payment updatedPayment)
         {
-            if (id != updatedPayment.Id)
+            try
             {
-                return BadRequest();
+                await _updatePayment.Execute(id, updatedPayment);
+                return NoContent();
             }
-
-            // Check if the payment exists
-            var payment = await _context.Payments.FindAsync(id);
-            if (payment == null)
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException)
             {
                 return NotFound();
             }
-
-            // Optionally, you can check if the associated booking exists
-            var booking = await _context.Bookings.FindAsync(updatedPayment.BookingId);
-            if (booking == null)
-            {
-                return BadRequest("Associated booking not found.");
-            }
-
-            // Update payment properties
-            payment.Amount = updatedPayment.Amount;
-            payment.PaymentMethod = updatedPayment.PaymentMethod;
-            payment.PaymentDate = updatedPayment.PaymentDate; // Optionally update the payment date
-
-            _context.Entry(payment).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PaymentExists(id))
-                {
-                    return NotFound();
-                }
-                throw;
-            }
-
-            return NoContent();
         }
 
         // DELETE: api/payment/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePayment(int id)
         {
-            var payment = await _context.Payments.FindAsync(id);
-            if (payment == null)
+            try
+            {
+                await _deletePayment.Execute(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
             {
                 return NotFound();
             }
-
-            _context.Payments.Remove(payment);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool PaymentExists(int id)
-        {
-            return _context.Payments.Any(e => e.Id == id);
         }
     }
 }

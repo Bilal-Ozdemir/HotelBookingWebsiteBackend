@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BackEnd.BackEnd.Data;
-using BackEnd.BackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Claims;
+using BackEnd.Entities;
 
 [Route("api/bookings")]
 [ApiController]

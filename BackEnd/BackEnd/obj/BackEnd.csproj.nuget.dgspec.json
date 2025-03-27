@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+    "C:\\Users\\acidc\\OneDrive\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj": {
+    "C:\\Users\\acidc\\OneDrive\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\acidc\\OneDrive\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\Bilal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bilal\\Desktop\\hotelwebsite\\BackEnd\\BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\acidc\\OneDrive\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\acidc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acidc\\OneDrive\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bilal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\acidc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -82,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

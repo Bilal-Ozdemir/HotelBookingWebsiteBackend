@@ -1,27 +1,10 @@
-<<<<<<< HEAD
 {
   "ExpandedNodes": [
     "",
     "\\BackEnd",
     "\\BackEnd\\BackEnd",
-    "\\BackEnd\\BackEnd\\Data",
-    "\\BackEnd\\BackEnd\\Models",
-    "\\Frontend",
-    "\\Frontend\\pages"
+    "\\BackEnd\\BackEnd\\Controllers"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd\\Models\\User.cs",
+  "SelectedNode": "\\BackEnd\\BackEnd\\Controllers\\BookingController.cs",
   "PreviewInSolutionExplorer": false
-=======
-{
-  "ExpandedNodes": [
-    "",
-    "\\BackEnd",
-    "\\BackEnd\\BackEnd",
-    "\\Frontend",
-    "\\Frontend\\pages",
-    "\\Frontend\\styles"
-  ],
-  "SelectedNode": "\\Frontend\\pages\\adminDashBoard.html",
-  "PreviewInSolutionExplorer": false
->>>>>>> feature/register-login
 }

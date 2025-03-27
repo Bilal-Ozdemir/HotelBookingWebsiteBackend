@@ -4,9 +4,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BackEnd.BackEnd.Data;
-using BackEnd.BackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using BCrypt.Net;
+using BackEnd.Entities;
 
 [Route("api/auth")]
 [ApiController]

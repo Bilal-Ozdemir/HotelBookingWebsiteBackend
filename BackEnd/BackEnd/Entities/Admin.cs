@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace BackEnd.BackEnd.Models
+namespace BackEnd.Entities
 {
     public class Admin : IdentityUser
     {

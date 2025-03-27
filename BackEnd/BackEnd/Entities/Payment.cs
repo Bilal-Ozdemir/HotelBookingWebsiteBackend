@@ -1,5 +1,4 @@
-﻿
-namespace BackEnd.BackEnd.Models
+﻿namespace BackEnd.Entities
 {
     public class Payment
     {

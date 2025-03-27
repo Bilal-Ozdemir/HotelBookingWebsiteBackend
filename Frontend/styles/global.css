@@ -122,3 +122,41 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+.rooms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+.room-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.room-card:hover {
+    transform: scale(1.05);
+}
+.room-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.room-card-content {
+    padding: 15px;
+}
+.room-card-content h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+.room-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.room-price {
+    font-weight: bold;
+    color: var(--secondary-color);
+}

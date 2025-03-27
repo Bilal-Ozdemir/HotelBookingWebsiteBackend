@@ -3,8 +3,9 @@
     "",
     "\\BackEnd",
     "\\BackEnd\\BackEnd",
-    "\\BackEnd\\BackEnd\\Controllers"
+    "\\BackEnd\\BackEnd\\Controllers",
+    "\\BackEnd\\BackEnd\\UseCases"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd\\Controllers\\BookingController.cs",
+  "SelectedNode": "\\BackEnd\\BackEnd\\UseCases\\Bookings",
   "PreviewInSolutionExplorer": false
 }

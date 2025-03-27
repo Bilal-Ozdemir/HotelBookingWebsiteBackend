@@ -1,7 +1,6 @@
-﻿using BackEnd.BackEnd.Data;
-using BackEnd.Entities;
+﻿using BackEnd.Entities;
+using BackEnd.UseCases.HotelRooms; // Ensure the namespace matches your project structure
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.BackEnd.Controllers
 {
@@ -9,33 +8,43 @@ namespace BackEnd.BackEnd.Controllers
     [ApiController]
     public class HotelRoomController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly GetHotelRooms _getHotelRooms;
+        private readonly GetHotelRoom _getHotelRoom;
+        private readonly CreateHotelRoom _createHotelRoom;
+        private readonly UpdateHotelRoom _updateHotelRoom;
+        private readonly DeleteHotelRoom _deleteHotelRoom;
 
-        public HotelRoomController(AppDbContext context)
+        public HotelRoomController(
+            GetHotelRooms getHotelRooms,
+            GetHotelRoom getHotelRoom,
+            CreateHotelRoom createHotelRoom,
+            UpdateHotelRoom updateHotelRoom,
+            DeleteHotelRoom deleteHotelRoom)
         {
-            _context = context;
+            _getHotelRooms = getHotelRooms;
+            _getHotelRoom = getHotelRoom;
+            _createHotelRoom = createHotelRoom;
+            _updateHotelRoom = updateHotelRoom;
+            _deleteHotelRoom = deleteHotelRoom;
         }
 
         // GET: api/hotelroom
         [HttpGet]
         public async Task<ActionResult<IEnumerable<HotelRoom>>> GetHotelRooms()
         {
-            return await _context.HotelRooms.Include(hr => hr.RoomTypes).ToListAsync();
+            var hotelRooms = await _getHotelRooms.Execute();
+            return Ok(hotelRooms);
         }
 
         // GET: api/hotelroom/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<HotelRoom>> GetHotelRoom(int id)
         {
-            var hotelRoom = await _context.HotelRooms
-                .Include(hr => hr.RoomTypes) // Include RoomType details if necessary
-                .FirstOrDefaultAsync(hr => hr.Id == id);
-
+            var hotelRoom = await _getHotelRoom.Execute(id);
             if (hotelRoom == null)
             {
                 return NotFound();
             }
-
             return Ok(hotelRoom);
         }
 
@@ -43,58 +52,42 @@ namespace BackEnd.BackEnd.Controllers
         [HttpPost]
         public async Task<ActionResult<HotelRoom>> CreateHotelRoom([FromBody] HotelRoom hotelRoom)
         {
-            _context.HotelRooms.Add(hotelRoom);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetHotelRoom), new { id = hotelRoom.Id }, hotelRoom);
+            var createdHotelRoom = await _createHotelRoom.Execute(hotelRoom);
+            return CreatedAtAction(nameof(GetHotelRoom), new { id = createdHotelRoom.Id }, createdHotelRoom);
         }
 
         // PUT: api/hotelroom/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHotelRoom(int id, [FromBody] HotelRoom updatedHotelRoom)
         {
-            if (id != updatedHotelRoom.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(updatedHotelRoom).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                await _updateHotelRoom.Execute(id, updatedHotelRoom);
+                return NoContent();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (ArgumentException)
             {
-                if (!HotelRoomExists(id))
-                {
-                    return NotFound();
-                }
-                throw;
+                return BadRequest("ID mismatch.");
             }
-
-            return NoContent();
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
         }
 
         // DELETE: api/hotelroom/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHotelRoom(int id)
         {
-            var hotelRoom = await _context.HotelRooms.FindAsync(id);
-            if (hotelRoom == null)
+            try
+            {
+                await _deleteHotelRoom.Execute(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
             {
                 return NotFound();
             }
-
-            _context.HotelRooms.Remove(hotelRoom);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool HotelRoomExists(int id)
-        {
-            return _context.HotelRooms.Any(e => e.Id == id);
         }
     }
 }

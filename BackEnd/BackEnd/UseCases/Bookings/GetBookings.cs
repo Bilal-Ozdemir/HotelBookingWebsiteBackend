@@ -1,12 +1,12 @@
 ﻿using BackEnd.Entities;
-using global::BackEnd.BackEnd.Data;
-using global::BackEnd.Entities;
+using BackEnd.BackEnd.Data;
+using BackEnd.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
-namespace BackEnd.UseCases
+namespace BackEnd.UseCases.Bookings
 {
 
 

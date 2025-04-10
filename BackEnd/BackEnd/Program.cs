@@ -1,5 +1,5 @@
 using BackEnd.BackEnd.Data;
-using BackEnd.BackEnd.Models; // Ensure this namespace includes your Admin model
+using BackEnd.Entities; // Ensure this namespace includes your Admin model
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
 var jwtAudience = builder.Configuration["Jwt:Audience"];
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // 🔹 Validate Configurations
 if (string.IsNullOrEmpty(connectionString))
@@ -101,6 +102,18 @@ await using (var scope = app.Services.CreateAsyncScope())
     await dbContext.Database.MigrateAsync(); // Apply any pending migrations
     await dbContext.EnsureSeedData(scope.ServiceProvider); // Seed the admin user
 }
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5500") // Adjust based on your setup
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 app.UseAuthentication();  // ✅ Required for JWT

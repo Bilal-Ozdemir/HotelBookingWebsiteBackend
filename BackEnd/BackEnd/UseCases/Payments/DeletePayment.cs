@@ -23,3 +23,5 @@ namespace BackEnd.UseCases.Payments
             _context.Payments.Remove(payment);
             await _context.SaveChangesAsync();
         }
+    }
+}

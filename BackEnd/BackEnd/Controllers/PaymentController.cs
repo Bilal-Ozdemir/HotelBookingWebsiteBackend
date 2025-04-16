@@ -1,102 +1,92 @@
-﻿using BackEnd.Entities;
-using BackEnd.UseCases.Payments; // Ensure this namespace matches your project structure
+﻿// BackEnd/Controllers/PaymentController.cs
+using BackEnd.DTOs;
+using BackEnd.Entities;
+using BackEnd.UseCases.Payments;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BackEnd.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class PaymentController : ControllerBase
     {
-        private readonly GetPayments _getPayments;
-        private readonly GetPayment _getPayment;
         private readonly CreatePayment _createPayment;
-        private readonly UpdatePayment _updatePayment;
-        private readonly DeletePayment _deletePayment;
 
-        public PaymentController(
-            GetPayments getPayments,
-            GetPayment getPayment,
-            CreatePayment createPayment,
-            UpdatePayment updatePayment,
-            DeletePayment deletePayment)
+        public PaymentController(CreatePayment createPayment)
         {
-            _getPayments = getPayments;
-            _getPayment = getPayment;
             _createPayment = createPayment;
-            _updatePayment = updatePayment;
-            _deletePayment = deletePayment;
-        }
-
-        // GET: api/payment
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Payment>>> GetPayments()
-        {
-            var payments = await _getPayments.Execute();
-            return Ok(payments);
-        }
-
-        // GET: api/payment/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Payment>> GetPayment(int id)
-        {
-            var payment = await _getPayment.Execute(id);
-            if (payment == null)
-            {
-                return NotFound();
-            }
-            return Ok(payment);
         }
 
         // POST: api/payment
         [HttpPost]
-        public async Task<ActionResult<Payment>> CreatePayment([FromBody] Payment payment)
+        public async Task<IActionResult> Create([FromBody] PaymentRequestDto request)
         {
+            // parse user ID from token
+            var claim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (claim == null || !int.TryParse(claim.Value, out var userId))
+                return Unauthorized(new { error = "Invalid or missing token." });
+
+            // Map DTO → entity
+            var paymentEntity = new Payment
+            {
+                BookingId     = request.BookingId,
+                UserId        = userId,
+                Amount        = request.Amount,
+                PaymentDate   = DateTime.UtcNow,
+                PaymentMethod = "SIMULATED"
+            };
+
             try
             {
-                var createdPayment = await _createPayment.Execute(payment);
-                return CreatedAtAction(nameof(GetPayment), new { id = createdPayment.Id }, createdPayment);
+                var created = await _createPayment.Execute(paymentEntity);
+
+                var dto = new PaymentDto
+                {
+                    Id          = created.Id,
+                    BookingId   = created.BookingId,
+                    Amount      = created.Amount,
+                    PaymentDate = created.PaymentDate
+                };
+
+                return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto);
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(ex.Message);
+                // Known bad input (e.g. booking not found)
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                // Anything else becomes a JSON 500
+                return StatusCode(500, new 
+                { 
+                    error   = "Internal server error",
+                    detail  = ex.Message
+                });
             }
         }
 
-        // PUT: api/payment/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePayment(int id, [FromBody] Payment updatedPayment)
+        // GET: api/payment/{id}
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id, [FromServices] GetPayment getPayment)
         {
-            try
-            {
-                await _updatePayment.Execute(id, updatedPayment);
-                return NoContent();
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-        }
+            var p = await getPayment.Execute(id);
+            if (p == null) return NotFound(new { error = "Payment not found." });
 
-        // DELETE: api/payment/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePayment(int id)
-        {
-            try
+            var dto = new PaymentDto
             {
-                await _deletePayment.Execute(id);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
+                Id          = p.Id,
+                BookingId   = p.BookingId,
+                Amount      = p.Amount,
+                PaymentDate = p.PaymentDate
+            };
+            return Ok(dto);
         }
     }
 }

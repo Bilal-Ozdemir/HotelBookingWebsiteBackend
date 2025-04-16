@@ -1,10 +1,10 @@
 ﻿using BackEnd.Data;
 using BackEnd.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace BackEnd.UseCases.Bookings
 {
-
     public class GetBooking
     {
         private readonly AppDbContext _context;
@@ -17,9 +17,11 @@ namespace BackEnd.UseCases.Bookings
         public async Task<Booking> Execute(int id)
         {
             return await _context.Bookings
-               .Include(b => b.HotelRoom)
-               .Include(b => b.User)
-               .FirstOrDefaultAsync(b => b.Id == id);
+                .Include(b => b.HotelRoom)
+                    .ThenInclude(hr => hr.RoomTypes)
+                .Include(b => b.User)
+                .Include(b => b.Payments)
+                .FirstOrDefaultAsync(b => b.Id == id);
         }
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEnd.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250416161819_SeedRoomTypesAndRooms")]
-    partial class SeedRoomTypesAndRooms
+    [Migration("20250416212118_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,15 +92,99 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 2,
-                            Price = 150m,
+                            Price = 100m,
                             RoomNumber = "102",
-                            RoomTypeId = 2
+                            RoomTypeId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Price = 250m,
+                            Price = 100m,
+                            RoomNumber = "103",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Price = 100m,
+                            RoomNumber = "104",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Price = 100m,
+                            RoomNumber = "105",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Price = 150m,
                             RoomNumber = "201",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Price = 150m,
+                            RoomNumber = "202",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Price = 150m,
+                            RoomNumber = "203",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Price = 150m,
+                            RoomNumber = "204",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Price = 150m,
+                            RoomNumber = "205",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Price = 250m,
+                            RoomNumber = "301",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Price = 250m,
+                            RoomNumber = "302",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Price = 250m,
+                            RoomNumber = "303",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Price = 250m,
+                            RoomNumber = "304",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Price = 250m,
+                            RoomNumber = "305",
                             RoomTypeId = 3
                         });
                 });
@@ -162,19 +246,19 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "A room for one person.",
+                            Description = "One person room",
                             Name = "Single"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "A room for two people.",
+                            Description = "Two person room",
                             Name = "Double"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "A spacious room with a separate living area.",
+                            Description = "Premium suite",
                             Name = "Suite"
                         });
                 });
@@ -202,6 +286,22 @@ namespace BackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "alice@example.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFakeHashAlice==",
+                            Username = "alice"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "bob@example.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFakeHashBob==",
+                            Username = "bob"
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.Entities.Booking", b =>
@@ -245,7 +345,7 @@ namespace BackEnd.Migrations
                     b.HasOne("BackEnd.Entities.User", "User")
                         .WithMany("Payments")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Booking");

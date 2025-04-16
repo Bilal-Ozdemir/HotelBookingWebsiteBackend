@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class FixHotelRoomModel : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -118,7 +118,7 @@ namespace BackEnd.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -126,9 +126,18 @@ namespace BackEnd.Migrations
                 columns: new[] { "Id", "Description", "Name" },
                 values: new object[,]
                 {
-                    { 1, "A room for one person.", "Single" },
-                    { 2, "A room for two people.", "Double" },
-                    { 3, "A spacious room with a separate living area.", "Suite" }
+                    { 1, "One person room", "Single" },
+                    { 2, "Two person room", "Double" },
+                    { 3, "Premium suite", "Suite" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "PasswordHash", "Username" },
+                values: new object[,]
+                {
+                    { 1, "alice@example.com", "AQAAAAEAACcQAAAAEFakeHashAlice==", "alice" },
+                    { 2, "bob@example.com", "AQAAAAEAACcQAAAAEFakeHashBob==", "bob" }
                 });
 
             migrationBuilder.InsertData(
@@ -136,9 +145,21 @@ namespace BackEnd.Migrations
                 columns: new[] { "Id", "Price", "RoomNumber", "RoomTypeId" },
                 values: new object[,]
                 {
-                    { 1, 100.00m, "101", 1 },
-                    { 2, 150.00m, "102", 2 },
-                    { 3, 250.00m, "201", 3 }
+                    { 1, 100m, "101", 1 },
+                    { 2, 100m, "102", 1 },
+                    { 3, 100m, "103", 1 },
+                    { 4, 100m, "104", 1 },
+                    { 5, 100m, "105", 1 },
+                    { 6, 150m, "201", 2 },
+                    { 7, 150m, "202", 2 },
+                    { 8, 150m, "203", 2 },
+                    { 9, 150m, "204", 2 },
+                    { 10, 150m, "205", 2 },
+                    { 11, 250m, "301", 3 },
+                    { 12, 250m, "302", 3 },
+                    { 13, 250m, "303", 3 },
+                    { 14, 250m, "304", 3 },
+                    { 15, 250m, "305", 3 }
                 });
 
             migrationBuilder.CreateIndex(

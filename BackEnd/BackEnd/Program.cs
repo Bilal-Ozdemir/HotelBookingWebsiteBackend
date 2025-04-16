@@ -1,48 +1,51 @@
+using System;
+using System.Text;
+using System.Text.Json;
 using BackEnd.Data;
 using BackEnd.Entities;
 using BackEnd.UseCases.Auth;
 using BackEnd.UseCases.HotelRooms;
 using BackEnd.UseCases.Bookings;
+using BackEnd.UseCases.Payments;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 Config
-var config          = builder.Configuration;
-var jwtKey          = config["Jwt:Key"];
-var jwtIssuer       = config["Jwt:Issuer"];
-var jwtAudience     = config["Jwt:Audience"];
-var connectionString = config.GetConnectionString("DefaultConnection");
-var corsPolicyName  = "_allowFrontend";
+// 🔹 Configuration
+var config            = builder.Configuration;
+var jwtKey            = config["Jwt:Key"];
+var jwtIssuer         = config["Jwt:Issuer"];
+var jwtAudience       = config["Jwt:Audience"];
+var connectionString  = config.GetConnectionString("DefaultConnection");
+const string corsPolicyName = "_allowFrontend";
 
 // 🔐 Validate required settings
-if (string.IsNullOrWhiteSpace(jwtKey) || jwtKey.Length < 32)
+target: if (string.IsNullOrWhiteSpace(jwtKey) || jwtKey.Length < 32)
     throw new InvalidOperationException("JWT Key must be at least 32 characters long");
 if (string.IsNullOrWhiteSpace(connectionString))
     throw new InvalidOperationException("Missing connection string.");
 
 // 🔹 Services
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(connectionString)
+);
 
-// Use IdentityCore (no cookie authentication) for JWT-only API
+// Use IdentityCore (JWT-only, no cookies)
 builder.Services
-    .AddIdentityCore<Admin>(options =>
+    .AddIdentityCore<Admin>(opts =>
     {
-        // your password / lockout settings here, e.g.:
-        // options.Password.RequireDigit = true;
-        // options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+        // password, lockout etc. settings
     })
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// 🔐 JWT Auth
+// 🔐 JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -51,15 +54,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             OnChallenge = context =>
             {
                 context.HandleResponse();
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                context.Response.StatusCode = 401;
                 context.Response.ContentType = "application/json";
-                return context.Response.WriteAsync("{\"error\": \"Unauthorized\"}");
+                return context.Response.WriteAsync(JsonSerializer.Serialize(new { error = "Unauthorized" }));
             },
             OnForbidden = context =>
             {
-                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                context.Response.StatusCode = 403;
                 context.Response.ContentType = "application/json";
-                return context.Response.WriteAsync("{\"error\": \"Forbidden\"}");
+                return context.Response.WriteAsync(JsonSerializer.Serialize(new { error = "Forbidden" }));
             }
         };
         options.TokenValidationParameters = new TokenValidationParameters
@@ -86,11 +89,15 @@ builder.Services.AddScoped<CreateHotelRoom>();
 builder.Services.AddScoped<UpdateHotelRoom>();
 builder.Services.AddScoped<DeleteHotelRoom>();
 builder.Services.AddScoped<CreateBooking>();
+builder.Services.AddScoped<GetBooking>();
+builder.Services.AddScoped<GetMyBookings>();
+builder.Services.AddScoped<DeleteBooking>();
+builder.Services.AddScoped<CreatePayment>();
 
 // 🌐 CORS
-builder.Services.AddCors(options =>
+builder.Services.AddCors(opts =>
 {
-    options.AddPolicy(corsPolicyName, policy =>
+    opts.AddPolicy(corsPolicyName, policy =>
     {
         policy
             .WithOrigins("http://127.0.0.1:5500", "http://localhost:5500")
@@ -144,6 +151,23 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Global exception handler → always JSON on errors
+app.UseExceptionHandler(errApp =>
+{
+    errApp.Run(async context =>
+    {
+        context.Response.ContentType = "application/json";
+        context.Response.StatusCode  = 500;
+        var error = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+        var json  = JsonSerializer.Serialize(new
+        {
+            error  = "An unexpected error occurred.",
+            detail = error?.Message
+        });
+        await context.Response.WriteAsync(json);
+    });
+});
+
 app.UseHttpsRedirection();
 app.UseCors(corsPolicyName);
 app.UseAuthentication();
@@ -153,8 +177,8 @@ app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await dbContext.Database.MigrateAsync();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.MigrateAsync();
 }
 
 app.Run();

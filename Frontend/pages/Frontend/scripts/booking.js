@@ -1,50 +1,53 @@
+// booking.js
 import { fetchRooms, createBooking } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const form = document.getElementById('bookingForm');
+  const form           = document.getElementById('bookingForm');
   const roomTypeSelect = document.getElementById('roomType');
 
+  // populate room types (unchanged)
   try {
     const rooms = await fetchRooms();
-    const uniqueTypes = {};
-
-    rooms.forEach(room => {
-      const type = room.roomTypes;
-      if (type && !uniqueTypes[type.id]) {
-        uniqueTypes[type.id] = type.name;
-      }
+    const unique = {};
+    rooms.forEach(r => {
+      const t = r.roomTypes;
+      if (t && !unique[t.id]) unique[t.id] = t.name;
     });
-
-    roomTypeSelect.innerHTML = Object.entries(uniqueTypes)
+    roomTypeSelect.innerHTML = Object.entries(unique)
       .map(([id, name]) => `<option value="${id}">${name}</option>`)
       .join('');
   } catch (err) {
-    alert('Failed to load room types.');
+    alert(err.message);
     console.error(err);
   }
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-
-    const checkIn = document.getElementById('checkIn').value;
-    const checkOut = document.getElementById('checkOut').value;
-    const roomTypeId = parseInt(roomTypeSelect.value);
-    const token = localStorage.getItem('token');
+    const checkIn    = document.getElementById('checkIn').value;
+    const checkOut   = document.getElementById('checkOut').value;
+    const roomTypeId = +roomTypeSelect.value;
+    const token      = localStorage.getItem('token');
 
     if (!token) {
-      alert('You must be logged in.');
+      alert('You must be logged in to book.');
+      return;
+    }
+    if (!checkIn || !checkOut || new Date(checkIn) >= new Date(checkOut)) {
+      alert('Please select valid check‑in and check‑out dates.');
       return;
     }
 
-    const bookingData = { roomTypeId, checkIn, checkOut };
-
     try {
-      const result = await createBooking(bookingData, token);
-      alert(result.message || 'Booking successful!');
-      form.reset();
+      const { bookingId } = await createBooking(
+        { roomTypeId, checkIn, checkOut },
+        token
+      );
+      // redirect to payment flow
+      window.location.href = `payment.html?bookingId=${bookingId}`;
     } catch (err) {
-      alert('Booking failed. Check console.');
-      console.error(err);
+      // err is now an Error, so err.message is your backend's "error" text
+      alert(err.message);
+      console.error('Booking error:', err);
     }
   });
 });

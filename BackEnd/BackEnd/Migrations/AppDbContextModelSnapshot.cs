@@ -82,22 +82,106 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 1,
-                            Price = 0m,
+                            Price = 100m,
                             RoomNumber = "101",
                             RoomTypeId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Price = 0m,
+                            Price = 100m,
                             RoomNumber = "102",
-                            RoomTypeId = 2
+                            RoomTypeId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Price = 0m,
+                            Price = 100m,
+                            RoomNumber = "103",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Price = 100m,
+                            RoomNumber = "104",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Price = 100m,
+                            RoomNumber = "105",
+                            RoomTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Price = 150m,
                             RoomNumber = "201",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Price = 150m,
+                            RoomNumber = "202",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Price = 150m,
+                            RoomNumber = "203",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Price = 150m,
+                            RoomNumber = "204",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Price = 150m,
+                            RoomNumber = "205",
+                            RoomTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Price = 250m,
+                            RoomNumber = "301",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Price = 250m,
+                            RoomNumber = "302",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Price = 250m,
+                            RoomNumber = "303",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Price = 250m,
+                            RoomNumber = "304",
+                            RoomTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Price = 250m,
+                            RoomNumber = "305",
                             RoomTypeId = 3
                         });
                 });
@@ -199,6 +283,22 @@ namespace BackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "alice@example.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFakeHashAlice==",
+                            Username = "alice"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "bob@example.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFakeHashBob==",
+                            Username = "bob"
+                        });
                 });
 
             modelBuilder.Entity("BackEnd.Entities.Booking", b =>

@@ -14,6 +14,7 @@ namespace BackEnd.Data
         public DbSet<HotelRoom> HotelRooms { get; set; }
         public DbSet<Payment>  Payments   { get; set; }
         public DbSet<RoomType> RoomTypes  { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +44,11 @@ namespace BackEnd.Data
                 .WithMany(rt => rt.HotelRooms)
                 .HasForeignKey(hr => hr.RoomTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Contact)
+                .WithOne(c => c.User)
+                .HasForeignKey<Contact>(c => c.UserId);
 
             // Seed Users
             modelBuilder.Entity<User>().HasData(

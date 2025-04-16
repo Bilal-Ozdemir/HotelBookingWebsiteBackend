@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+
 namespace BackEnd.Entities
 {
     public class User
@@ -15,8 +16,9 @@ namespace BackEnd.Entities
 
         [Required]
         public string PasswordHash { get; set; }
+
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
         public ICollection<Payment> Payments { get; set; } = new List<Payment>();
-
+        public Contact Contact { get; set; } 
     }
 }

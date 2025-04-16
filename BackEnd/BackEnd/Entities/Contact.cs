@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEnd.Entities
@@ -6,14 +7,16 @@ namespace BackEnd.Entities
     {
         public int Id { get; set; }
 
+        [ForeignKey("User")] 
+        public int UserId { get; set; }
+
         public string CustomerFirstName { get; set; }
 
         public string CustomerLastName { get; set; }
 
-         [RegularExpression(@"^(\+?\d{1,3}[- ]?)?\(?\d{1,4}?\)?[- ]?\d{1,4}[- ]?\d{1,9}$", 
-        ErrorMessage = "Invalid phone number format.")]
+        [Phone]
         public string PhoneNumber { get; set; }
 
-        public User
+        public User User { get; set; } 
     }
 }

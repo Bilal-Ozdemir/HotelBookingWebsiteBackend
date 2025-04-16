@@ -6,6 +6,6 @@
     "\\BackEnd\\BackEnd\\Controllers",
     "\\BackEnd\\BackEnd\\UseCases"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd\\UseCases\\Bookings",
+  "SelectedNode": "\\BackEnd\\BackEnd\\Controllers\\AuthController.cs",
   "PreviewInSolutionExplorer": false
 }

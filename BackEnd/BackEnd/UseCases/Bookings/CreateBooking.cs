@@ -1,5 +1,5 @@
 ﻿using BackEnd.Entities;
-using BackEnd.BackEnd.Data;
+using BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Bookings

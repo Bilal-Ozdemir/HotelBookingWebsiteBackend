@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class addedSeedDataAndAdminLogin : Migration
+    public partial class InitClean : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -61,40 +61,6 @@ namespace BackEnd.Migrations
                         principalTable: "RoomTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Admins",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Admins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Admins_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -165,15 +131,6 @@ namespace BackEnd.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "Email", "PasswordHash", "Username" },
-                values: new object[,]
-                {
-                    { 1, "john@example.com", "hashed_password_1", "john_doe" },
-                    { 2, "jane@example.com", "hashed_password_2", "jane_smith" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "HotelRooms",
                 columns: new[] { "Id", "Price", "RoomNumber", "RoomTypeId" },
                 values: new object[,]
@@ -182,30 +139,6 @@ namespace BackEnd.Migrations
                     { 2, 150.00m, "102", 2 },
                     { 3, 250.00m, "201", 3 }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Bookings",
-                columns: new[] { "Id", "CheckIn", "CheckOut", "RoomId", "UserId" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1 },
-                    { 2, new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 2 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Payments",
-                columns: new[] { "Id", "Amount", "BookingId", "PaymentDate", "PaymentMethod", "UserId" },
-                values: new object[,]
-                {
-                    { 1, 400.00m, 1, new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Credit Card", 1 },
-                    { 2, 600.00m, 2, new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "PayPal", 2 }
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Admins_UserId",
-                table: "Admins",
-                column: "UserId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_RoomId",
@@ -236,9 +169,6 @@ namespace BackEnd.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Admins");
-
             migrationBuilder.DropTable(
                 name: "Payments");
 

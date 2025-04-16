@@ -1,5 +1,7 @@
-﻿using BackEnd.BackEnd.Data;
+﻿using BackEnd.DTOs;
 using BackEnd.Entities;
+using BackEnd.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Auth
@@ -13,18 +15,17 @@ namespace BackEnd.UseCases.Auth
             _context = context;
         }
 
-        public async Task<User> Execute(LoginDto loginDto)
+        public async Task<User> Execute(LoginDto dto)
         {
-            // Find the user by email
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+            if (user == null) throw new Exception("Invalid credentials");
 
-            // Validate user existence and password match
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash))
-            {
-                throw new UnauthorizedAccessException("Invalid email or password.");
-            }
+            var hasher = new PasswordHasher<User>();
+            var result = hasher.VerifyHashedPassword(user, user.PasswordHash, dto.Password);
+            if (result == PasswordVerificationResult.Failed)
+                throw new Exception("Invalid credentials");
 
-            return user; // Return the user object
+            return user;
         }
     }
 }

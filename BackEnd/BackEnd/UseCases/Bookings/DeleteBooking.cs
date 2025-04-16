@@ -1,4 +1,4 @@
-﻿using BackEnd.BackEnd.Data;
+﻿using BackEnd.Data;
 
 namespace BackEnd.UseCases.Bookings
 {

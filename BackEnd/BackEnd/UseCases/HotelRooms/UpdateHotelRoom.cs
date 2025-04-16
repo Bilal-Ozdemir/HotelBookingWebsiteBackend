@@ -1,5 +1,5 @@
 ﻿using BackEnd.Entities;
-using global::BackEnd.BackEnd.Data;
+using global::BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
 namespace BackEnd.UseCases.HotelRooms
 {

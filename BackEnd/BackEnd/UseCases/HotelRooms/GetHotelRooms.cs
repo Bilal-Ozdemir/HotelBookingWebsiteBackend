@@ -1,5 +1,5 @@
 ﻿using BackEnd.Entities;
-using global::BackEnd.BackEnd.Data;
+using global::BackEnd.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.HotelRooms
@@ -13,7 +13,6 @@ namespace BackEnd.UseCases.HotelRooms
         {
             _context = context;
         }
-
         public async Task<IEnumerable<HotelRoom>> Execute()
         {
             return await _context.HotelRooms.Include(hr => hr.RoomTypes).ToListAsync();

@@ -1,0 +1,29 @@
+<div id="user-profile" class="container">
+
+  <div class="card">
+    <div class="profile-header">
+      <img src="/api/placeholder/100/100" alt="Profile Picture">
+      <div>
+        <h2>John Doe</h2>
+        <p>john.doe&#64;example.com</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" [(ngModel)]="phoneNumber" value="+1 (555) 123-4567" />
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" [(ngModel)]="address" value="123 Hotel Street, City, Country" />
+    </div>
+
+    <div class="form-group">
+      <label>Membership Level</label>
+      <input type="text" [value]="'Silver Member'" readonly />
+    </div>
+
+    <button class="btn">Update Profile</button>
+  </div>
+</div>

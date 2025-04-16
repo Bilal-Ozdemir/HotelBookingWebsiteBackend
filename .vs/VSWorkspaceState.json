@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BackEnd",
-    "\\BackEnd\\BackEnd",
-    "\\BackEnd\\BackEnd\\Controllers",
-    "\\BackEnd\\BackEnd\\UseCases"
+    "\\hotel-booking-frontend",
+    "\\hotel-booking-frontend\\src",
+    "\\hotel-booking-frontend\\src\\app",
+    "\\hotel-booking-frontend\\src\\app\\pages",
+    "\\hotel-booking-frontend\\src\\app\\pages\\home-page",
+    "\\hotel-booking-frontend\\src\\app\\pages\\room-view-page",
+    "\\hotel-booking-frontend\\src\\app\\pages\\user-login",
+    "\\hotel-booking-frontend\\src\\app\\pages\\user-profile-login",
+    "\\hotel-booking-frontend\\src\\app\\pages\\user-registration"
   ],
-  "SelectedNode": "\\BackEnd\\BackEnd\\UseCases\\Bookings",
+  "SelectedNode": "\\hotel-booking-frontend\\src\\styles.css",
   "PreviewInSolutionExplorer": false
 }

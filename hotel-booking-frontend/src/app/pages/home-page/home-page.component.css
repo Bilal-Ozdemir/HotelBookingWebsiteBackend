@@ -1,0 +1,12 @@
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* 👈 this adds vertical spacing between children (title, paragraph, button) */
+}
+
+  .hero-content .btn {
+    margin-top: 20px; /* extra bump if needed */
+  }

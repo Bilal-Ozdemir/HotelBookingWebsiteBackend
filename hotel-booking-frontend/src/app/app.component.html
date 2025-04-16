@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/" class="logo-link">{{ title }}</a>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/rooms" routerLinkActive="active">Rooms</a>
+    <a routerLink="/booking" routerLinkActive="active">Booking</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/register" routerLinkActive="active">Register</a>
+  </div>
+</nav>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Hotel Management. All rights reserved.</p>
+</footer>

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\faiyz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\obj\\",
+=======
+    "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectName": "BackEnd",
+        "projectPath": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\fatin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< Updated upstream
           "C:\\Users\\faiyz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\fatin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +62,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -96,7 +114,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< Updated upstream
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
         }
       }
     }

@@ -1,103 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./../styles/global.css" />
-    <link rel="stylesheet" href="./../styles/home.css" />
-    <title>Hotel Booking - Rooms</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/global.css">
+  <title>Rooms</title>
 </head>
 <body>
-    <div id="rooms" class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="homePage.html" style="color: inherit; text-decoration: none;">Hotel Management</a>
-            </div>
-            <div class="nav-links">
-                <a href="homePage.html">Home</a>
-                <a href="rooms.html">Rooms</a>
-                <a href="bookingform.html">Booking</a>
-                <a href="contactPage.html">Contact</a>
-                <a href="userLogin.html">Login</a>
-                <a href="userRegistration.html">Register</a>
-            </div>
-        </nav>
+  <div id="rooms" class="container">
+    <nav class="navbar">
+      <div class="logo">Hotel Management</div>
+      <div class="nav-links">
+        <a href="homePage.html">Home</a>
+        <a href="roomViewPage.html">Rooms</a>
+        <a href="bookingform.html">Booking</a>
+        <a href="contactPage.html">Contact</a>
+        <a href="userLogin.html">Login</a>
+        <a href="userRegistration.html">Register</a>
+      </div>
+    </nav>
 
-        <header>
-            <h1 style="text-align: center; margin: 20px 0; color: var(--primary-color);">Our Rooms</h1>
-            <p style="text-align: center; margin-bottom: 20px;">Choose from our range of luxurious accommodations</p>
-        </header>
+    <header class="card">
+      <h1>Our Rooms</h1>
+      <p>Choose from our range of luxurious accommodations</p>
+    </header>
 
-        <section class="rooms-container">
-            <div class="room-card">
-                <img src="/Frontend/asssets/room1.jpg" alt="Standard Room">
-                <div class="room-card-content">
-                    <h3>Standard Room</h3>
-                    <p>Comfortable room with essential amenities for a relaxing stay.</p>
-                    <div class="room-details">
-                        <div>
-                            <strong>Occupancy:</strong> 2 Guests<br>
-                            <strong>Size:</strong> 25 m²
-                        </div>
-                        <div class="room-price">$99/night</div>
-                    </div>
-                    <a href="bookingform.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Book Now</a>
-                </div>
-            </div>
+    <section class="rooms-container">
+      <div class="room-card">
+        <img src="/Frontend/asssets/room1.jpg" alt="Standard Room">
+        <div class="room-card-content">
+          <h3>Standard Room</h3>
+          <p>Comfortable room with essential amenities for a relaxing stay.</p>
+          <div class="room-details">
+            <div><strong>Occupancy:</strong> 2 Guests<br><strong>Size:</strong> 25 m²</div>
+            <div class="room-price">$99/night</div>
+          </div>
+          <a href="bookingform.html" class="btn">Book Now</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="/Frontend/asssets/room2.jpg" alt="Deluxe Room">
+        <div class="room-card-content">
+          <h3>Deluxe Room</h3>
+          <p>Spacious room with city view and premium facilities.</p>
+          <div class="room-details">
+            <div><strong>Occupancy:</strong> 3 Guests<br><strong>Size:</strong> 35 m²</div>
+            <div class="room-price">$149/night</div>
+          </div>
+          <a href="bookingform.html" class="btn">Book Now</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="/Frontend/asssets/room3.jpg" alt="Executive Suite">
+        <div class="room-card-content">
+          <h3>Executive Suite</h3>
+          <p>Luxurious suite with separate living area and premium amenities.</p>
+          <div class="room-details">
+            <div><strong>Occupancy:</strong> 4 Guests<br><strong>Size:</strong> 50 m²</div>
+            <div class="room-price">$249/night</div>
+          </div>
+          <a href="bookingform.html" class="btn">Book Now</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="/Frontend/asssets/room4.jpg" alt="Family Room">
+        <div class="room-card-content">
+          <h3>Family Room</h3>
+          <p>Spacious room designed for families with children.</p>
+          <div class="room-details">
+            <div><strong>Occupancy:</strong> 4-5 Guests<br><strong>Size:</strong> 45 m²</div>
+            <div class="room-price">$179/night</div>
+          </div>
+          <a href="bookingform.html" class="btn">Book Now</a>
+        </div>
+      </div>
+    </section>
 
-            <div class="room-card">
-                <img src="/Frontend/asssets/room2.jpg" alt="Deluxe Room">
-                <div class="room-card-content">
-                    <h3>Deluxe Room</h3>
-                    <p>Spacious room with city view and premium facilities.</p>
-                    <div class="room-details">
-                        <div>
-                            <strong>Occupancy:</strong> 3 Guests<br>
-                            <strong>Size:</strong> 35 m²
-                        </div>
-                        <div class="room-price">$149/night</div>
-                    </div>
-                    <a href="bookingform.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Book Now</a>
-                </div>
-            </div>
-
-            <div class="room-card">
-                <img src="/Frontend/asssets/room3.jpg" alt="Suite">
-                <div class="room-card-content">
-                    <h3>Executive Suite</h3>
-                    <p>Luxurious suite with separate living area and premium amenities.</p>
-                    <div class="room-details">
-                        <div>
-                            <strong>Occupancy:</strong> 4 Guests<br>
-                            <strong>Size:</strong> 50 m²
-                        </div>
-                        <div class="room-price">$249/night</div>
-                    </div>
-                    <a href="bookingform.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Book Now</a>
-                </div>
-            </div>
-
-            <div class="room-card">
-                <img src="/Frontend/asssets/room4.jpg" alt="Family Room">
-                <div class="room-card-content">
-                    <h3>Family Room</h3>
-                    <p>Spacious room designed for families with children.</p>
-                    <div class="room-details">
-                        <div>
-                            <strong>Occupancy:</strong> 4-5 Guests<br>
-                            <strong>Size:</strong> 45 m²
-                        </div>
-                        <div class="room-price">$179/night</div>
-                    </div>
-                    <a href="bookingform.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Book Now</a>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Hotel Website. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+      <p>&copy; 2025 Hotel Website. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>

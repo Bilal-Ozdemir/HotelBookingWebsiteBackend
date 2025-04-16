@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackEnd.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250416132220_InitClean")]
-    partial class InitClean
+    [Migration("20250416161819_SeedRoomTypesAndRooms")]
+    partial class SeedRoomTypesAndRooms
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace BackEnd.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CheckIn")
                         .HasColumnType("datetime2");
@@ -82,21 +85,21 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 1,
-                            Price = 100.00m,
+                            Price = 100m,
                             RoomNumber = "101",
                             RoomTypeId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Price = 150.00m,
+                            Price = 150m,
                             RoomNumber = "102",
                             RoomTypeId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Price = 250.00m,
+                            Price = 250m,
                             RoomNumber = "201",
                             RoomTypeId = 3
                         });

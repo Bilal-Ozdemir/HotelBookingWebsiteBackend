@@ -3,10 +3,9 @@
     public class RoomType
     {
         public int Id { get; set; }
-        public string Name { get; set; } // e.g., Single, Double, Suite
+        public string Name { get; set; }
         public string Description { get; set; }
 
-        // Nav property
         public ICollection<HotelRoom> HotelRooms { get; set; }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using BackEnd.Entities;
-using BackEnd.UseCases.HotelRooms; // Ensure the namespace matches your project structure
+using BackEnd.UseCases.HotelRooms;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BackEnd.BackEnd.Controllers
+namespace BackEnd.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/hotelroom")]
     [ApiController]
     public class HotelRoomController : ControllerBase
     {
@@ -27,42 +28,40 @@ namespace BackEnd.BackEnd.Controllers
             _updateHotelRoom = updateHotelRoom;
             _deleteHotelRoom = deleteHotelRoom;
         }
-
-        // GET: api/hotelroom
+        [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<HotelRoom>>> GetHotelRooms()
-        {
-            var hotelRooms = await _getHotelRooms.Execute();
-            return Ok(hotelRooms);
-        }
-
-        // GET: api/hotelroom/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<HotelRoom>> GetHotelRoom(int id)
-        {
-            var hotelRoom = await _getHotelRoom.Execute(id);
-            if (hotelRoom == null)
-            {
-                return NotFound();
-            }
-            return Ok(hotelRoom);
-        }
-
-        // POST: api/hotelroom
-        [HttpPost]
-        public async Task<ActionResult<HotelRoom>> CreateHotelRoom([FromBody] HotelRoom hotelRoom)
-        {
-            var createdHotelRoom = await _createHotelRoom.Execute(hotelRoom);
-            return CreatedAtAction(nameof(GetHotelRoom), new { id = createdHotelRoom.Id }, createdHotelRoom);
-        }
-
-        // PUT: api/hotelroom/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateHotelRoom(int id, [FromBody] HotelRoom updatedHotelRoom)
+        public async Task<IActionResult> GetHotelRooms()
         {
             try
             {
-                await _updateHotelRoom.Execute(id, updatedHotelRoom);
+                var hotelRooms = await _getHotelRooms.Execute(); // This is where it crashes
+                return Ok(hotelRooms);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("🔥 ERROR loading hotel rooms:");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace); // ✅ full trace
+                return StatusCode(500, "Server error: " + ex.Message);
+            }
+        }
+
+
+        // ✅ POST: /api/hotelroom
+        [HttpPost]
+        public async Task<IActionResult> CreateHotelRoom([FromBody] HotelRoom hotelRoom)
+        {
+            var created = await _createHotelRoom.Execute(hotelRoom);
+            return CreatedAtAction(nameof(GetHotelRoom), new { id = created.Id }, created);
+        }
+
+        // ✅ PUT: /api/hotelroom/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateHotelRoom(int id, [FromBody] HotelRoom updatedRoom)
+        {
+            try
+            {
+                await _updateHotelRoom.Execute(id, updatedRoom);
                 return NoContent();
             }
             catch (ArgumentException)
@@ -71,11 +70,11 @@ namespace BackEnd.BackEnd.Controllers
             }
             catch (KeyNotFoundException)
             {
-                return NotFound();
+                return NotFound("Room not found.");
             }
         }
 
-        // DELETE: api/hotelroom/{id}
+        // ✅ DELETE: /api/hotelroom/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHotelRoom(int id)
         {
@@ -86,7 +85,7 @@ namespace BackEnd.BackEnd.Controllers
             }
             catch (KeyNotFoundException)
             {
-                return NotFound();
+                return NotFound("Room not found.");
             }
         }
     }

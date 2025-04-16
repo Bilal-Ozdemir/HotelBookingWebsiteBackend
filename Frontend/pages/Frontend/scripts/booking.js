@@ -1,17 +1,25 @@
 import { fetchRooms, createBooking } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const form = document.querySelector('form');
+  const form = document.getElementById('bookingForm');
   const roomTypeSelect = document.getElementById('roomType');
 
- 
   try {
     const rooms = await fetchRooms();
-    roomTypeSelect.innerHTML = rooms
-      .map(room => `<option value="${room.id}">${room.roomNumber} - ${room.roomTypes.name}</option>`)
+    const uniqueTypes = {};
+
+    rooms.forEach(room => {
+      const type = room.roomTypes;
+      if (type && !uniqueTypes[type.id]) {
+        uniqueTypes[type.id] = type.name;
+      }
+    });
+
+    roomTypeSelect.innerHTML = Object.entries(uniqueTypes)
+      .map(([id, name]) => `<option value="${id}">${name}</option>`)
       .join('');
   } catch (err) {
-    alert('Failed to load room types');
+    alert('Failed to load room types.');
     console.error(err);
   }
 
@@ -20,26 +28,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const checkIn = document.getElementById('checkIn').value;
     const checkOut = document.getElementById('checkOut').value;
-    const roomId = parseInt(roomTypeSelect.value);
+    const roomTypeId = parseInt(roomTypeSelect.value);
+    const token = localStorage.getItem('token');
 
-    const token = localStorage.getItem('token'); 
     if (!token) {
-      alert('You must be logged in to book.');
+      alert('You must be logged in.');
       return;
     }
 
-    const bookingData = {
-      roomId,
-      checkIn,
-      checkOut
-    };
+    const bookingData = { roomTypeId, checkIn, checkOut };
 
     try {
       const result = await createBooking(bookingData, token);
       alert(result.message || 'Booking successful!');
       form.reset();
     } catch (err) {
-      alert(err.message);
+      alert('Booking failed. Check console.');
       console.error(err);
     }
   });

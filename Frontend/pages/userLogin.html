@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Login</title>
+  <link rel="stylesheet" href="./../styles/global.css">
 </head>
 <body>
   <h2>User Login</h2>
@@ -39,7 +40,7 @@
 
         localStorage.setItem("token", result.token);
         alert("Login successful");
-        window.location.href = "/homePage.html"; // 🔁 Optionally redirect
+        window.location.href = "homePage.html";
       } catch (err) {
         alert("Error: " + err.message);
       }

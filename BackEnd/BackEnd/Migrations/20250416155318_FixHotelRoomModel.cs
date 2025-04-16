@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BackEnd.Migrations
 {
     /// <inheritdoc />
-    public partial class InitClean : Migration
+    public partial class FixHotelRoomModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,8 @@ namespace BackEnd.Migrations
                     UserId = table.Column<int>(type: "int", nullable: false),
                     RoomId = table.Column<int>(type: "int", nullable: false),
                     CheckIn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CheckOut = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CheckOut = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

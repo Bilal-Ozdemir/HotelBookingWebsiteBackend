@@ -35,36 +35,22 @@ namespace BackEnd.Data
                 .HasForeignKey(p => p.BookingId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.User)
-                .WithMany(u => u.Payments)
-                .HasForeignKey(p => p.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
-
             modelBuilder.Entity<HotelRoom>()
                 .HasOne(hr => hr.RoomTypes)
                 .WithMany(rt => rt.HotelRooms)
                 .HasForeignKey(hr => hr.RoomTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Payment>()
-                .Property(p => p.Amount)
-                .HasColumnType("decimal(18,2)");
-
-            modelBuilder.Entity<HotelRoom>()
-                .Property(hr => hr.Price)
-                .HasColumnType("decimal(18,2)");
-
             modelBuilder.Entity<RoomType>().HasData(
-                new RoomType { Id = 1, Name = "Single", Description = "A room for one person." },
-                new RoomType { Id = 2, Name = "Double", Description = "A room for two people." },
-                new RoomType { Id = 3, Name = "Suite", Description = "A spacious room with a separate living area." }
+                new RoomType { Id = 1, Name = "Single", Description = "One person room" },
+                new RoomType { Id = 2, Name = "Double", Description = "Two person room" },
+                new RoomType { Id = 3, Name = "Suite", Description = "Premium suite" }
             );
 
             modelBuilder.Entity<HotelRoom>().HasData(
-                new HotelRoom { Id = 1, RoomNumber = "101", RoomTypeId = 1, Price = 100.00m },
-                new HotelRoom { Id = 2, RoomNumber = "102", RoomTypeId = 2, Price = 150.00m },
-                new HotelRoom { Id = 3, RoomNumber = "201", RoomTypeId = 3, Price = 250.00m }
+                new HotelRoom { Id = 1, RoomNumber = "101", RoomTypeId = 1 },
+                new HotelRoom { Id = 2, RoomNumber = "102", RoomTypeId = 2 },
+                new HotelRoom { Id = 3, RoomNumber = "201", RoomTypeId = 3 }
             );
         }
     }

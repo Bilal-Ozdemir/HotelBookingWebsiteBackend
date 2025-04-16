@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';  
+const API_BASE_URL = 'http://localhost:5252/api';
 
 export async function fetchRooms() {
   const res = await fetch(`${API_BASE_URL}/hotelroom`);
@@ -7,19 +7,23 @@ export async function fetchRooms() {
 }
 
 export async function createBooking(bookingData, token) {
-  const res = await fetch(`${API_BASE_URL}/bookings/create`, {
+  const response = await fetch(`${API_BASE_URL}/bookings`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      'Authorization': 'Bearer ' + token
     },
-    body: JSON.stringify(bookingData),
+    body: JSON.stringify(bookingData)
   });
 
-  const responseData = await res.json();
-  if (!res.ok) {
-    throw new Error(responseData.message || 'Booking failed');
+  const contentType = response.headers.get('content-type') || '';
+  const isJson = contentType.includes('application/json');
+  const result = isJson ? await response.json().catch(() => null) : await response.text();
+
+  if (!response.ok) {
+    console.error("Booking failed", response.status, result);
+    throw new Error(result?.message || result || 'Booking failed');
   }
 
-  return responseData;
+  return result;
 }

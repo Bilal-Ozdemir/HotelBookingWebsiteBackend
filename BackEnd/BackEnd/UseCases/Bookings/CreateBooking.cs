@@ -1,10 +1,9 @@
-﻿using BackEnd.Entities;
-using BackEnd.Data;
+﻿using BackEnd.Data;
+using BackEnd.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Bookings
 {
-
     public class CreateBooking
     {
         private readonly AppDbContext _context;
@@ -14,24 +13,31 @@ namespace BackEnd.UseCases.Bookings
             _context = context;
         }
 
-        public async Task<Booking> Execute(Booking booking)
+        public async Task<Booking> Execute(int userId, int roomTypeId, DateTime checkIn, DateTime checkOut)
         {
-            var room = await _context.HotelRooms.FindAsync(booking.RoomId);
-            if (room == null) throw new ArgumentException("Room not found.");
+            var availableRoom = await _context.HotelRooms
+                .Where(r => r.RoomTypeId == roomTypeId)
+                .Where(r => !_context.Bookings.Any(b =>
+                    b.RoomId == r.Id &&
+                    (
+                        (checkIn >= b.CheckIn && checkIn < b.CheckOut) ||
+                        (checkOut > b.CheckIn && checkOut <= b.CheckOut) ||
+                        (checkIn <= b.CheckIn && checkOut >= b.CheckOut)
+                    )))
+                .FirstOrDefaultAsync();
 
-            // Check for room availability
-            bool isRoomBooked = await _context.Bookings.AnyAsync(b =>
-                b.RoomId == booking.RoomId &&
-                (
-                    booking.CheckIn >= b.CheckIn && booking.CheckIn < b.CheckOut ||
-                    booking.CheckOut > b.CheckIn && booking.CheckOut <= b.CheckOut ||
-                    booking.CheckIn <= b.CheckIn && booking.CheckOut >= b.CheckOut
-                )
-            );
+            if (availableRoom == null)
+                throw new InvalidOperationException("No available room for the selected dates.");
 
-            if (isRoomBooked) throw new InvalidOperationException("Room is already booked for the selected dates.");
+            var booking = new Booking
+            {
+                UserId = userId,
+                RoomId = availableRoom.Id,
+                CheckIn = checkIn,
+                CheckOut = checkOut,
+                BookingDate = DateTime.UtcNow
+            };
 
-            booking.UserId = booking.UserId; // Assuming this is set externally
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 

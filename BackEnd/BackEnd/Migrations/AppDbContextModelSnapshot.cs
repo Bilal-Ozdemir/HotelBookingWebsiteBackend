@@ -30,6 +30,9 @@ namespace BackEnd.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("CheckIn")
                         .HasColumnType("datetime2");
 
@@ -79,21 +82,21 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 1,
-                            Price = 100.00m,
+                            Price = 0m,
                             RoomNumber = "101",
                             RoomTypeId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Price = 150.00m,
+                            Price = 0m,
                             RoomNumber = "102",
                             RoomTypeId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Price = 250.00m,
+                            Price = 0m,
                             RoomNumber = "201",
                             RoomTypeId = 3
                         });
@@ -156,19 +159,19 @@ namespace BackEnd.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "A room for one person.",
+                            Description = "One person room",
                             Name = "Single"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "A room for two people.",
+                            Description = "Two person room",
                             Name = "Double"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "A spacious room with a separate living area.",
+                            Description = "Premium suite",
                             Name = "Suite"
                         });
                 });
@@ -239,7 +242,7 @@ namespace BackEnd.Migrations
                     b.HasOne("BackEnd.Entities.User", "User")
                         .WithMany("Payments")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Booking");

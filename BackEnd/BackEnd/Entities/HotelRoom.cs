@@ -1,14 +1,16 @@
-﻿namespace BackEnd.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BackEnd.Entities
 {
     public class HotelRoom
     {
         public int Id { get; set; }
         public string RoomNumber { get; set; }
-        public int RoomTypeId { get; set; } // Foreign Key for RoomType
-        public decimal Price { get; set; }
+        public int RoomTypeId { get; set; }
 
-        // Nav property
-        public ICollection<Booking> Bookings { get; set; }
-        public RoomType RoomTypes { get; set; }
+        public decimal Price { get; set; } // ✅ Add this
+        public RoomType RoomTypes { get; set; } // ✅ Navigation property
+
+        public ICollection<Booking> Bookings { get; set; } // ✅ Add this
     }
 }

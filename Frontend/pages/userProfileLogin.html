@@ -14,6 +14,11 @@
         <a href="homePage.html">Home</a>
         <a href="userProfile.html">My Bookings</a>
         <a href="#" id="logout-link">Logout</a>
+        <span id="authLinks">
+          <a href="userLogin.html">Login</a>
+          <a href="userRegistration.html">Register</a>
+        </span>
+        <span id="adminLink"></span>
       </div>
     </nav>
 
@@ -45,6 +50,10 @@
     </div>
 
     <script type="module" src="../pages/Frontend/scripts/userProfile.js"></script>
+    <script type="module">
+      import './Frontend/scripts/errors.js';
+    </script>
+    <script type="module" src="./Frontend/scripts/nav.js"></script>
   </div>
 </body>
 </html>

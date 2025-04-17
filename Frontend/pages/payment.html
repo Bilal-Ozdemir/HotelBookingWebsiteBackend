@@ -17,8 +17,11 @@
         <a href="roomViewPage.html">Rooms</a>
         <a href="bookingform.html">Booking</a>
         <a href="contactPage.html">Contact</a>
-        <a href="userLogin.html">Login</a>
-        <a href="userRegistration.html">Register</a>
+        <span id="authLinks">
+          <a href="userLogin.html">Login</a>
+          <a href="userRegistration.html">Register</a>
+        </span>
+        <span id="adminLink"></span>
       </div>
     </nav>
 
@@ -45,12 +48,17 @@
           <input type="text" id="cvc" pattern="\d{3}" required value="123" />
         </div>
         <button type="submit" class="btn">Submit Payment</button>
+        <div id="errorMessages" class="error-messages"></div>
       </form>
 
       <div id="confirmation" style="display:none;"></div>
     </div>
 
     <script src="../pages/Frontend/scripts/payment.js"></script>
+    <script type="module">
+      import './Frontend/scripts/errors.js';
+    </script>
+    <script type="module" src="./Frontend/scripts/nav.js"></script>
   </div>
 </body>
 </html>

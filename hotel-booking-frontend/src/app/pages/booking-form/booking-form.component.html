@@ -1,0 +1,38 @@
+<!-- src/app/booking-form/booking-form.component.html -->
+<div id="booking-form" class="container">
+  <div class="card">
+    <h2>Book Your Stay</h2>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="bookingForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" ngModel required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ngModel required />
+      </div>
+      <div class="form-group">
+        <label for="roomType">Room Type</label>
+        <select id="roomType" name="roomType" ngModel required>
+          <option value="" disabled selected>Loading rooms...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="checkIn">Check‑in Date</label>
+        <input type="date" id="checkIn" name="checkIn" ngModel required />
+      </div>
+      <div class="form-group">
+        <label for="checkOut">Check‑out Date</label>
+        <input type="date" id="checkOut" name="checkOut" ngModel required />
+      </div>
+      <div class="form-group">
+        <label for="specialRequests">Special Requests</label>
+        <textarea id="specialRequests"
+                  name="specialRequests"
+                  rows="4"
+                  ngModel></textarea>
+      </div>
+      <button class="btn" type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>

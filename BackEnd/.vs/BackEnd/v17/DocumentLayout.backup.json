@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\",
+  "WorkspaceRootPath": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\entities\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\entities\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\entities\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\josh\\documents\\github\\hotelbookingwebsitebackend\\backend\\backend\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|c:\\users\\fatin\\downloads\\hotelbookingwebsitebackend\\backend\\backend\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A876B68-2D59-4F92-9231-64F025040777}|BackEnd\\BackEnd.csproj|solutionrelative:backend\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,84 +34,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs*",
-              "RelativeToolTip": "BackEnd\\Data\\AppDbContext.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T23:13:12.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Booking.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Entities\\Booking.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Booking.cs",
-              "RelativeToolTip": "BackEnd\\Entities\\Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T23:12:54.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Admin.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Entities\\Admin.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Admin.cs",
-              "RelativeToolTip": "BackEnd\\Entities\\Admin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T23:01:29.385Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "BackEnd\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\User.cs*",
-              "RelativeToolTip": "BackEnd\\Entities\\User.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABRAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Program.cs",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Program.cs",
+              "RelativeToolTip": "BackEnd\\Program.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T23:11:44.554Z",
+              "WhenOpened": "2025-04-16T23:24:11.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "BackEnd\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:13:12.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Booking.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Entities\\Booking.cs",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Booking.cs",
+              "RelativeToolTip": "BackEnd\\Entities\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:12:54.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Admin.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Entities\\Admin.cs",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Admin.cs",
+              "RelativeToolTip": "BackEnd\\Entities\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:01:29.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "BackEnd\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\User.cs",
+              "RelativeToolTip": "BackEnd\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:11:44.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Contact.cs",
-              "DocumentMoniker": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Contact.cs",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Contact.cs",
               "RelativeDocumentMoniker": "BackEnd\\Entities\\Contact.cs",
-              "ToolTip": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Contact.cs*",
-              "RelativeToolTip": "BackEnd\\Entities\\Contact.cs*",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\Entities\\Contact.cs",
+              "RelativeToolTip": "BackEnd\\Entities\\Contact.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T22:59:58.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T22:59:58.024Z"
             }
           ]
         }

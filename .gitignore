@@ -1,1 +1,26 @@
+# Node dependencies
+/node_modules/
+
+# Angular build outputs
+/dist/
+/.angular/
+
+# IDEs and editors
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.cache
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# Your existing ignores
 BackEnd/BackEnd/obj/

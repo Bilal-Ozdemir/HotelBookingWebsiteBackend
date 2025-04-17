@@ -1,7 +1,60 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hotel-booking-frontend\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,19 +62,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "admin-dash-board.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\admin-dash-board\\admin-dash-board.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:33:39.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.component.css",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.css",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\app.component.css",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.css",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\app.component.css",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-17T04:20:51.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "admin-login.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\admin-login\\admin-login.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:32:36.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "user-registration.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\user-registration\\user-registration.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:32:20.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "user-login.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\user-login\\user-login.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:32:01.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "home-page.component.css",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-17T04:31:20.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "booking-form.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\booking-form\\booking-form.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvyYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:25:17.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\styles.css",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\styles.css",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\styles.css",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\styles.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-17T04:30:19.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "user-profile-login.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\user-profile-login\\user-profile-login.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:25:41.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "contact-page.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\contact-page\\contact-page.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:24:50.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "room-view-page.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\room-view-page\\room-view-page.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:23:20.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "home-page.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\pages\\home-page\\home-page.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:22:46.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "app.component.html",
+              "DocumentMoniker": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.html",
+              "RelativeDocumentMoniker": "hotel-booking-frontend\\src\\app\\app.component.html",
+              "ToolTip": "C:\\Users\\fatin\\Downloads\\HotelBookingWebsiteBackend\\hotel-booking-frontend\\src\\app\\app.component.html",
+              "RelativeToolTip": "hotel-booking-frontend\\src\\app\\app.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-17T04:20:55.602Z",
+              "EditorCaption": ""
             }
           ]
         }

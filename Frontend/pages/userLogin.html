@@ -13,10 +13,14 @@
       <div class="nav-links">
         <a href="homePage.html">Home</a>
         <a href="roomViewPage.html">Rooms</a>
-        <a href="bookingform.html">Booking</a>
+        <a href="bookingform.html">Book</a>
         <a href="contactPage.html">Contact</a>
-        <a href="userLogin.html">Login</a>
-        <a href="userRegistration.html">Register</a>
+        <span id="userProfileLink"></span>
+        <span id="authLinks">
+          <a href="userLogin.html">Login</a>
+          <a href="userRegistration.html">Register</a>
+        </span>
+        <span id="adminLink"></span>
       </div>
     </nav>
 
@@ -32,10 +36,14 @@
           <input type="password" id="password" required />
         </div>
         <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn" onclick="window.location.href='adminLogin.html'">Admin Login</button>
+        <div id="errorMessages" class="error-messages"></div>
       </form>
     </div>
   </div>
-
+  <script type="module">
+    import './Frontend/scripts/errors.js';
+  </script>
   <script>
     document.getElementById("loginForm").addEventListener("submit", async function(e) {
       e.preventDefault();
@@ -60,5 +68,6 @@
       }
     });
   </script>
+  <script type="module" src="./Frontend/scripts/nav.js"></script>
 </body>
 </html>

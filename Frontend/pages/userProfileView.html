@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/global.css" />
+  <title>My Bookings</title>
+</head>
+<body>
+  <!-- Redirect if not logged in -->
+  <script>
+    if (!localStorage.getItem('token')) {
+      window.location.href = 'userLogin.html?redirect=userProfileView.html';
+    }
+  </script>
+
+  <!-- Shared nav -->
+  <nav class="navbar">
+    <div class="logo">Hotel Management</div>
+    <div class="nav-links">
+      <a href="homePage.html">Home</a>
+      <a href="roomViewPage.html">Rooms</a>
+      <a href="bookingform.html">Book</a>
+      <a href="contactPage.html">Contact</a>
+      <span id="userProfileLink"></span>
+      <span id="authLinks"></span>
+      <span id="adminLink"></span>
+    </div>
+  </nav>
+
+  <!-- Inline errors -->
+  <div id="errorMessages" class="error-messages"></div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Profile</h2>
+      <form id="editProfileForm" class="form-group">
+        <label for="editName">Name</label>
+        <input type="text" id="editName" required />
+
+        <label for="editEmail">Email</label>
+        <input type="email" id="editEmail" required />
+
+        <button type="submit" class="btn">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:2rem;">
+      <h2>My Bookings</h2>
+      <table class="bookings-table">
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Room Type</th>
+            <th>Room #</th>
+            <th>Check‑In</th>
+            <th>Check‑Out</th>
+            <th>Paid</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bookings-body">
+          <tr><td colspan="7">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Shared scripts -->
+  <script type="module" src="./Frontend/scripts/errors.js"></script>
+  <script type="module" src="./Frontend/scripts/userProfile.js"></script>
+  <script type="module" src="./Frontend/scripts/nav.js"></script>
+</body>
+</html>

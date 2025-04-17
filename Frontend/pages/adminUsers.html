@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/global.css"/>
+  <title>Admin — Manage Users</title>
+</head>
+<body>
+  <!-- shared nav -->
+  <nav class="navbar">
+    <div class="logo">Hotel Management</div>
+    <div class="nav-links">
+      <span id="authLinks">
+        <a href="userLogin.html">Login</a>
+        <a href="userRegistration.html">Register</a>
+      </span>
+      <span id="userProfileLink"  hidden></span>
+      <span id="adminLink"></span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Manage Customers</h1>
+    <div id="errorMessages" class="error-messages"></div>
+
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Username</th><th>Email</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users-body">
+        <tr><td colspan="4">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script type="module" src="./Frontend/scripts/errors.js"></script>
+  <script type="module" src="./Frontend/scripts/nav.js"></script>
+  <script type="module" src="./Frontend/scripts/adminUsers.js"></script>
+</body>
+</html>

@@ -87,6 +87,7 @@ builder.Services.AddScoped<DeleteHotelRoom>();
 builder.Services.AddScoped<CreateBooking>();
 builder.Services.AddScoped<GetBooking>();
 builder.Services.AddScoped<GetMyBookings>();
+
 builder.Services.AddScoped<DeleteBooking>();
 builder.Services.AddScoped<CreatePayment>();
 

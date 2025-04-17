@@ -1,23 +1,38 @@
 ﻿// BackEnd/UseCases/Bookings/DeleteBooking.cs
-using BackEnd.Data;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using BackEnd.Data;
+using BackEnd.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Bookings
 {
     public class DeleteBooking
     {
         private readonly AppDbContext _context;
-        public DeleteBooking(AppDbContext context) => _context = context;
 
-        // Now takes an int userId, matching Booking.UserId
+        public DeleteBooking(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        /// <summary>
+        /// Deletes the booking and any linked payments, if it belongs to the given userId.
+        /// </summary>
         public async Task<bool> Execute(int bookingId, int userId)
         {
             var booking = await _context.Bookings
+                // include any payments (or other child tables)
+                .Include(b => b.Payments)
                 .FirstOrDefaultAsync(b => b.Id == bookingId && b.UserId == userId);
 
-            if (booking == null) 
+            if (booking == null)
                 return false;
+
+            // remove child payments first so FK constraints aren’t violated
+            if (booking.Payments != null && booking.Payments.Any())
+            {
+                _context.Payments.RemoveRange(booking.Payments);
+            }
 
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();

@@ -1,4 +1,4 @@
-// api.js
+
 export const API_BASE_URL = 'http://localhost:5252/api';
 
 export async function fetchRooms() {
@@ -16,15 +16,7 @@ export async function createBooking(data, token) {
     },
     body: JSON.stringify(data)
   });
-
-  // always parse JSON
   const json = await res.json();
-
-  if (!res.ok) {
-    // throw a real Error so .message is set
-    throw new Error(json.error || json.message || 'Booking failed');
-  }
-
-  // json should be { message: "...", bookingId: 123 }
+  if (!res.ok) throw new Error(json.error || json.message || 'Booking failed');
   return json;
 }

@@ -15,19 +15,23 @@
       <h2>Admin Login</h2>
       <form id="adminLoginForm">
         <div class="form-group">
-          <label for="admin-email">Email or Username</label>
-          <input type="text" id="admin-email" required />
+          <label for="admin-email">Email</label>
+          <input type="email" id="admin-email" required />
         </div>
         <div class="form-group">
           <label for="admin-password">Password</label>
-          <input type="password" id="admin-password" required />
+          <input type="password" id="admin-password" required minlength="6" />
         </div>
         <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn" onclick="window.location.href='userLogin.html'">User Login</button>
+        <div id="errorMessages" class="error-messages"></div>
       </form>
+      
     </div>
   </div>
 
   <script>
+    
     document.getElementById("adminLoginForm").addEventListener("submit", async function(e) {
       e.preventDefault();
       const usernameOrEmail = document.getElementById("admin-email").value.trim();
@@ -57,5 +61,9 @@
       }
     });
   </script>
+  <script type="module">
+    import './Frontend/scripts/errors.js';
+  </script>
+
 </body>
 </html>

@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/global.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/global.css" />
   <title>Booking Form</title>
 </head>
 <body>
-  <div id="booking-form" class="container">
-    <nav class="navbar">
-      <div class="logo">Hotel Management</div>
-      <div class="nav-links">
-        <a href="homePage.html">Home</a>
-        <a href="roomViewPage.html">Rooms</a>
-        <a href="bookingform.html">Booking</a>
-        <a href="contactPage.html">Contact</a>
+  <!-- 1. Redirect if not logged in -->
+  <script>
+    if (!localStorage.getItem('token')) {
+      // send to login, then come back here
+      window.location.href = 'userLogin.html?redirect=bookingform.html';
+    }
+  </script>
+
+  <!-- 2. Shared nav -->
+  <nav class="navbar">
+    <div class="logo">Hotel Management</div>
+    <div class="nav-links">
+      <a href="homePage.html">Home</a>
+      <a href="roomViewPage.html">Rooms</a>
+      <a href="bookingform.html">Book</a>
+      <a href="contactPage.html">Contact</a>
+      <span id="userProfileLink"></span>
+      <!-- auth links will be replaced by nav.js -->
+      <span id="authLinks">
         <a href="userLogin.html">Login</a>
         <a href="userRegistration.html">Register</a>
-      </div>
-    </nav>
-
-    <div class="card">
-      <h2>Book Your Stay</h2>
-      <form id="bookingForm">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="fullName" required />
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="email" required />
-        </div>
-        <div class="form-group">
-          <label>Room Type</label>
-          <select id="roomType" required>
-            <option value="" disabled selected>Loading rooms...</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Check-in Date</label>
-          <input type="date" id="checkIn" required />
-        </div>
-        <div class="form-group">
-          <label>Check-out Date</label>
-          <input type="date" id="checkOut" required />
-        </div>
-        <div class="form-group">
-          <label>Special Requests</label>
-          <textarea id="specialRequests" rows="4"></textarea>
-        </div>
-        <button class="btn" type="submit">Confirm Booking</button>
-      </form>
+      </span>
+      <span id="adminLink"></span>
     </div>
+  </nav>
+
+  <!-- 3. Booking card -->
+  <div class="card container">
+    <h2>Book Your Stay</h2>
+    <!-- error container -->
+    <div id="errorMessages" class="error-messages"></div>
+
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="fullName">Name</label>
+        <input type="text" id="fullName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="roomType">Room Type</label>
+        <select id="roomType" required>
+          <option value="" disabled>Loading room types…</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="checkIn">Check‑in Date</label>
+        <input type="date" id="checkIn" required />
+      </div>
+      <div class="form-group">
+        <label for="checkOut">Check‑out Date</label>
+        <input type="date" id="checkOut" required />
+      </div>
+      <div class="form-group">
+        <label for="specialRequests">Special Requests</label>
+        <textarea id="specialRequests" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
   </div>
-  <script type="module" src="../pages/Frontend/scripts/booking.js"></script>
+
+  <!-- 4. Load shared scripts -->
+  <script type="module" src="./Frontend/scripts/errors.js"></script>
+  <script type="module" src="./Frontend/scripts/booking.js"></script>
+  <script type="module" src="./Frontend/scripts/nav.js"></script>
 </body>
 </html>

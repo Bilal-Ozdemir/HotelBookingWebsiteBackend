@@ -21,16 +21,12 @@
   <nav class="navbar">
     <div class="logo">Hotel Management</div>
     <div class="nav-links">
-      <a href="homePage.html">Home</a>
-      <a href="roomViewPage.html">Rooms</a>
-      <a href="bookingform.html">Booking</a>
-      <a href="contactPage.html">Contact</a>
-  
-      
+      <span id="authLinks">
+        <a href="userLogin.html">Login</a>
+        <a href="userRegistration.html">Register</a>
+      </span>
+      <span id="userProfileLink"  hidden></span>
       <span id="adminLink"></span>
-  
-     
-      <span id="authLinks"></span>
     </div>
   </nav>
   
@@ -102,6 +98,7 @@
                   <input type="number" step="0.01" id="room-price" required />
                 </div>
                 <button type="submit" class="btn" id="room-form-submit">Add Room</button>
+                <div id="errorMessages" class="error-messages"></div>
               </form>
             </div>
         </div>
@@ -109,5 +106,9 @@
 
     <script type="module" src="./../pages/Frontend/scripts/adminDashboard.js"></script>
     <script type="module" src="./../pages/Frontend/scripts/nav.js"></script>
+    <script type="module">
+      import './Frontend/scripts/errors.js';
+    </script>
+    <script type="module" src="./Frontend/scripts/nav.js"></script>
 </body>
 </html>

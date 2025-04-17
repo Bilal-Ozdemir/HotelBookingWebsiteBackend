@@ -1,37 +1,40 @@
-// Frontend/pages/Frontend/scripts/nav.js
+// nav.js
 document.addEventListener('DOMContentLoaded', () => {
-  const authSpan      = document.getElementById('authLinks');
-  const adminLinkSpan = document.getElementById('adminLink');
-  const token         = localStorage.getItem('token');
+  const authSpan        = document.getElementById('authLinks');
+  const adminSpan       = document.getElementById('adminLink');
+  const profileSpan     = document.getElementById('userProfileLink');
+  const token           = localStorage.getItem('token');
 
-  // Build auth links
   if (token) {
-    // Logged in
+    // Show Logout
     authSpan.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
-    document
-      .getElementById('logoutLink')
+    document.getElementById('logoutLink')
       .addEventListener('click', e => {
         e.preventDefault();
         localStorage.removeItem('token');
         window.location.href = 'homePage.html';
       });
+
+    // Show My Bookings
+    profileSpan.innerHTML = `<a href="userProfileView.html">Profile</a>`;
   } else {
-    // Not logged in
+    // Show Login/Register
     authSpan.innerHTML = `
       <a href="userLogin.html">Login</a>
       <a href="userRegistration.html">Register</a>
     `;
+    profileSpan.innerHTML = '';  // hide Bookings link
   }
 
-  // Show Admin Dashboard link only if JWT contains role=Admin
+  // Show Admin Dashboard if JWT role=Admin
   if (token) {
     try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      if (payload.role === 'Admin') {
-        adminLinkSpan.innerHTML = `<a href="adminDashBoard.html">Dashboard</a>`;
+      const { role } = JSON.parse(atob(token.split('.')[1]));
+      if (role === 'Admin') {
+        adminSpan.innerHTML = `<a href="adminDashBoard.html">Dashboard</a>`;
       }
     } catch {
-      adminLinkSpan.innerHTML = '';
+      adminSpan.innerHTML = '';
     }
   }
 });

@@ -1,1 +1,11 @@
+# VS / .NET build outputs
+BackEnd/BackEnd/bin/
 BackEnd/BackEnd/obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Rider / VS Code things
+.vs/
+*.vscode/

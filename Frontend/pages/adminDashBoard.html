@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./../styles/global.css" />
     <title>Admin Dashboard</title>
     <style>
-      /* Additional styles for tables and layout */
+     
       .bookings-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
       .bookings-table th, .bookings-table td { border: 1px solid #ddd; padding: 0.5rem; }
       .bookings-table th { background: #f4f4f4; }
@@ -18,18 +18,24 @@
     </style>
 </head>
 <body>
-    <div id="admin-dashboard" class="container">
-        <nav class="navbar">
-            <div class="logo">Hotel Management</div>
-            <div class="nav-links">
-                <a href="adminDashBoard.html" id="nav-dashboard">Dashboard</a>
-                <a href="bookingform.html" id="nav-bookings">Bookings</a>
-                <a href="roomViewPage.html" id="nav-rooms">Rooms</a>
-                <a href="#" id="logout-link">Logout</a>
-            </div>
-        </nav>
+  <nav class="navbar">
+    <div class="logo">Hotel Management</div>
+    <div class="nav-links">
+      <a href="homePage.html">Home</a>
+      <a href="roomViewPage.html">Rooms</a>
+      <a href="bookingform.html">Booking</a>
+      <a href="contactPage.html">Contact</a>
+  
+      
+      <span id="adminLink"></span>
+  
+     
+      <span id="authLinks"></span>
+    </div>
+  </nav>
+  
 
-        <!-- Dashboard overview cards -->
+       
         <div id="dashboard-cards" class="dashboard-grid">
             <div class="dashboard-card">
                 <h3>Total Bookings</h3>
@@ -49,7 +55,7 @@
             </div>
         </div>
 
-        <!-- Bookings management panel (hidden by default) -->
+        
         <div id="bookings-panel" class="card" style="display:none; margin-top:20px;">
             <h3>All Bookings</h3>
             <table class="bookings-table">
@@ -65,10 +71,10 @@
             </table>
         </div>
 
-        <!-- Room management panel (hidden by default) -->
+        
         <div id="rooms-panel" class="card" style="display:none; margin-top:20px;">
             <h3>Rooms Management</h3>
-            <!-- Rooms list table -->
+            
             <table class="rooms-table">
               <thead>
                 <tr>
@@ -79,7 +85,7 @@
                 <tr><td colspan="4">Loading...</td></tr>
               </tbody>
             </table>
-            <!-- Add/Edit Room Form -->
+           
             <div style="margin-top: 1rem;">
               <h4 id="room-form-title">Add New Room</h4>
               <form id="room-form">
@@ -102,5 +108,6 @@
     </div>
 
     <script type="module" src="./../pages/Frontend/scripts/adminDashboard.js"></script>
+    <script type="module" src="./../pages/Frontend/scripts/nav.js"></script>
 </body>
 </html>

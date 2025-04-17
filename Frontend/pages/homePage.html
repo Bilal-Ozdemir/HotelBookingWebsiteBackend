@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/global.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/global.css"/>
   <title>Home</title>
 </head>
 <body>
@@ -15,8 +15,11 @@
         <a href="roomViewPage.html">Rooms</a>
         <a href="bookingform.html">Booking</a>
         <a href="contactPage.html">Contact</a>
-        <a href="userLogin.html">Login</a>
-        <a href="userRegistration.html">Register</a>
+        <span id="adminLink"></span>
+        <span id="authLinks">
+          <a href="userLogin.html">Login</a>
+          <a href="userRegistration.html">Register</a>
+        </span>
       </div>
     </nav>
 
@@ -56,5 +59,8 @@
       <p>&copy; 2025 Hotel Website. All rights reserved.</p>
     </footer>
   </div>
+
+ 
+  <script type="module" src="../pages/Frontend/scripts/nav.js"></script>
 </body>
 </html>

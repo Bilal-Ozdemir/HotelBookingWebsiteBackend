@@ -48,6 +48,7 @@
   .navbar .nav-links {
     display: flex;
     gap: 1.5rem;
+    align-items: center;  
   }
   .navbar .nav-links a {
     position: relative;

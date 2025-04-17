@@ -55,7 +55,9 @@
       <div id="confirmation" style="display:none;"></div>
     </div>
 
-    <script src="../pages/Frontend/scripts/payment.js"></script>
+    <!-- new: load payment.js as an ES module -->
+<script type="module" src="./Frontend/scripts/payment.js"></script>
+>
     <script type="module">
       import './Frontend/scripts/errors.js';
     </script>

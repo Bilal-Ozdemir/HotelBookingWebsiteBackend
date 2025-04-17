@@ -10,7 +10,7 @@
   <!-- Redirect if not logged in -->
   <script>
     if (!localStorage.getItem('token')) {
-      window.location.href = 'userLogin.html?redirect=userProfile.html';
+      window.location.href = 'userLogin.html?redirect=userProfileView.html';
     }
   </script>
 
@@ -23,30 +23,30 @@
       <a href="bookingform.html">Book</a>
       <a href="contactPage.html">Contact</a>
       <span id="userProfileLink"></span>
-      <!-- auth links will be replaced by nav.js -->
-      <span id="authLinks">
-        <a href="userLogin.html">Login</a>
-        <a href="userRegistration.html">Register</a>
-      </span>
+      <span id="authLinks"></span>
       <span id="adminLink"></span>
     </div>
   </nav>
 
-  <!-- Inline error container -->
+  <!-- Inline errors -->
   <div id="errorMessages" class="error-messages"></div>
 
-  <div id="user-profile" class="container">
+  <div class="container">
     <div class="card">
-      <div class="profile-header">
-        <!-- replace with real avatar path if you have one -->
-        
-        <div>
-          <h2 id="user-name">Loading…</h2>
-          <p id="user-email"></p>
-        </div>
-      </div>
+      <h2>Profile</h2>
+      <form id="editProfileForm" class="form-group">
+        <label for="editName">Name</label>
+        <input type="text" id="editName" required />
 
-      <h3>My Bookings</h3>
+        <label for="editEmail">Email</label>
+        <input type="email" id="editEmail" required />
+
+        <button type="submit" class="btn">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:2rem;">
+      <h2>My Bookings</h2>
       <table class="bookings-table">
         <thead>
           <tr>
@@ -56,16 +56,17 @@
             <th>Check‑In</th>
             <th>Check‑Out</th>
             <th>Paid</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="bookings-body">
-          <tr><td colspan="6">Loading…</td></tr>
+          <tr><td colspan="7">Loading…</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- Load our shared modules and page logic -->
+  <!-- Shared scripts -->
   <script type="module" src="./Frontend/scripts/errors.js"></script>
   <script type="module" src="./Frontend/scripts/userProfile.js"></script>
   <script type="module" src="./Frontend/scripts/nav.js"></script>

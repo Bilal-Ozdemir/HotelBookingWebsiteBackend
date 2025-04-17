@@ -220,4 +220,61 @@
     background: transparent;
     color: inherit;
   }
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    animation: fadeIn var(--transition-speed) ease-out;
+  }
   
+  .users-table th,
+  .users-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .users-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .users-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .users-table td input[type="text"],
+  .users-table td input[type="email"] {
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .users-table td input:disabled {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+  }
+  
+  /* Button Spacing */
+  .users-table .btn {
+    margin: 0.25rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Make delete button red */
+  .users-table .delete-user {
+    background-color: #e74c3c;
+  }
+  .users-table .delete-user:hover {
+    background-color: #c0392b;
+  }

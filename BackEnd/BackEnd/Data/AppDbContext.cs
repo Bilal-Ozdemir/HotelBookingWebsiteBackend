@@ -71,7 +71,7 @@ namespace BackEnd.Data
                 new HotelRoom { Id = 15, RoomNumber = "305", RoomTypeId = 3, Price = 250m }
             );
 
-           
+           //seed user
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, Username = "alice", Email = "alice@example.com", PasswordHash = "AQAAAAEAACcQAAAAEFakeHashAlice==", Role = "User" },
                 new User { Id = 2, Username = "bob", Email = "bob@example.com", PasswordHash = "AQAAAAEAACcQAAAAEFakeHashBob==", Role = "User" }

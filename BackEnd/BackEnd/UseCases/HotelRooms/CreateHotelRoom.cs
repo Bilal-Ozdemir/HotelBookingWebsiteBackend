@@ -17,7 +17,7 @@ namespace BackEnd.UseCases.HotelRooms
         {
             _context.HotelRooms.Add(hotelRoom);
             await _context.SaveChangesAsync();
-            return hotelRoom; // Return the created hotel room
+            return hotelRoom;
         }
     }
 }

@@ -21,11 +21,11 @@ namespace BackEnd.UseCases.Payments
                 throw new ArgumentException("Booking not found.");
             }
 
-            payment.PaymentDate = DateTime.UtcNow; // Set the payment date to now
+            payment.PaymentDate = DateTime.UtcNow; 
             _context.Payments.Add(payment);
             await _context.SaveChangesAsync();
 
-            return payment; // Return the created payment
+            return payment; 
         }
     }
 }

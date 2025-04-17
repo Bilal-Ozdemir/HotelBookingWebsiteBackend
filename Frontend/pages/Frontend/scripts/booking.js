@@ -1,4 +1,3 @@
-// Frontend/pages/Frontend/scripts/booking.js
 import { fetchRooms, createBooking } from './api.js';
 import { clearErrors, showError }   from './errors.js';
 
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const form = document.getElementById('bookingForm');
   const roomTypeSelect = document.getElementById('roomType');
 
-  // 1) Populate room types
+  
   try {
     const rooms  = await fetchRooms();
     const unique = {};
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return showError(err.message);
   }
 
-  // 2) Handle submission
+  
   form.addEventListener('submit', async e => {
     e.preventDefault();
     clearErrors();
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const roomTypeId = +roomTypeSelect.value;
     const token      = localStorage.getItem('token');
 
-    // (Redundant, but safe)
+   
     if (!token) {
       return showError('Please login first.');
     }

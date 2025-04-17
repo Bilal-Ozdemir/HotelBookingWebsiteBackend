@@ -1,9 +1,8 @@
-// BackEnd/UseCases/Admin/GetAllUsers.cs
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BackEnd.Data;
-using BackEnd.DTOs;             // ← Import the DTO namespace
+using BackEnd.DTOs;            
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Admin
@@ -18,7 +17,7 @@ namespace BackEnd.UseCases.Admin
             return await _context.Users
                 .Select(u => new UserDto {
                     Id       = u.Id,
-                    Username = u.Username,  // ← Use your actual entity property
+                    Username = u.Username, 
                     Email    = u.Email
                 })
                 .ToListAsync();

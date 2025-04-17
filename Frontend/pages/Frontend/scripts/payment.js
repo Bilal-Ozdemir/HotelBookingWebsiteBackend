@@ -1,5 +1,3 @@
-// File: payment.js
-// Frontend/pages/Frontend/scripts/payment.js
 import { clearErrors, showError } from './errors.js';
 
 const API_BASE_URL = 'http://localhost:5252/api';

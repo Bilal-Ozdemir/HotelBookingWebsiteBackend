@@ -1,9 +1,8 @@
-// BackEnd/UseCases/Admin/UpdateUser.cs
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BackEnd.Data;
-using BackEnd.DTOs;             // ← Import the DTO namespace
+using BackEnd.DTOs;             
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.UseCases.Admin

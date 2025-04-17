@@ -1,8 +1,7 @@
-// Frontend/pages/Frontend/scripts/errors.js
 export function showError(message) {
     let c = document.getElementById('errorMessages');
     if (!c) {
-      // dynamically inject container once
+      
       c = document.createElement('div');
       c.id = 'errorMessages';
       c.className = 'error-messages';

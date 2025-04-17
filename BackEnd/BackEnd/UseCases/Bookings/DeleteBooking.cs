@@ -21,14 +21,13 @@ namespace BackEnd.UseCases.Bookings
         public async Task<bool> Execute(int bookingId, int userId)
         {
             var booking = await _context.Bookings
-                // include any payments (or other child tables)
                 .Include(b => b.Payments)
                 .FirstOrDefaultAsync(b => b.Id == bookingId && b.UserId == userId);
 
             if (booking == null)
                 return false;
 
-            // remove child payments first so FK constraints aren’t violated
+            
             if (booking.Payments != null && booking.Payments.Any())
             {
                 _context.Payments.RemoveRange(booking.Payments);

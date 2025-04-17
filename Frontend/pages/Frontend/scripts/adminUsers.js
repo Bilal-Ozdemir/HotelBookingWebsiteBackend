@@ -1,4 +1,3 @@
-// Frontend/pages/Frontend/scripts/adminUsers.js
 import { clearErrors, showError } from './errors.js';
 
 const API_BASE_URL = 'http://localhost:5252/api/admin/users';
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // Render user rows
   if (!users.length) {
     tableBody.innerHTML = `<tr><td colspan="4"><em>No users found.</em></td></tr>`;
   } else {
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       .join('');
   }
 
-  // Handle click actions on buttons
   tableBody.addEventListener('click', async (e) => {
     const row = e.target.closest('tr');
     const id = row?.dataset.id;
@@ -81,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       cancelBtn.hidden = false;
     }
 
-    // Save changes
+    
     if (e.target.classList.contains('save-user')) {
       clearErrors();
 
@@ -114,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // Cancel edit
+    
     if (e.target.classList.contains('cancel-edit')) {
       usernameInput.value = originalUsername;
       emailInput.value = originalEmail;
@@ -125,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       cancelBtn.hidden = true;
     }
 
-    // Delete user
+    
     if (e.target.classList.contains('delete-user')) {
       if (!confirm(`Are you sure you want to delete user ID ${id}?`)) return;
       clearErrors();

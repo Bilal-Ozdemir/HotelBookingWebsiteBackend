@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using BackEnd.Data;
-using BackEnd.DTOs;                              // ← import your DTOs
+using BackEnd.DTOs;                             
 using BackEnd.Entities;
 using BackEnd.UseCases.Auth;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -81,12 +81,6 @@ namespace BackEnd.Controllers
             return Ok(bookings);
         }
 
-        // PUT & DELETE for bookings omitted for brevity…
-
-        // ========================
-        // User management section
-        // ========================
-
         // GET: api/admin/users
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsers()
@@ -94,7 +88,7 @@ namespace BackEnd.Controllers
             var users = await _context.Users
                 .Select(u => new UserDto {
                     Id       = u.Id,
-                    Username = u.Username,   // ← your actual property name
+                    Username = u.Username,   
                     Email    = u.Email
                 })
                 .ToListAsync();

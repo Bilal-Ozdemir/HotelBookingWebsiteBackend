@@ -1,5 +1,4 @@
-﻿// BackEnd/UseCases/Bookings/GetMyBookings.cs
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BackEnd.Data;
@@ -17,10 +16,7 @@ namespace BackEnd.UseCases.Bookings
             _context = context;
         }
 
-        /// <summary>
-        /// Returns only the bookings belonging to the specified userId,
-        /// including related HotelRoom, RoomTypes, and Payments.
-        /// </summary>
+
         public async Task<IEnumerable<Booking>> Execute(int userId)
         {
             return await _context.Bookings

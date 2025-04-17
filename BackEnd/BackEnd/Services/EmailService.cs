@@ -53,7 +53,7 @@ namespace BackEnd.Services
             }
             catch (Exception ex)
             {
-                // you can log ex.Message here
+                
                 throw new InvalidOperationException(
                     $"Email send failed: {ex.Message}", ex);
             }

@@ -1,4 +1,3 @@
-// Frontend/pages/Frontend/scripts/userProfile.js
 import { clearErrors, showError } from './errors.js';
 
 const API_BASE_URL = 'http://localhost:5252/api';
@@ -6,7 +5,7 @@ const API_BASE_URL = 'http://localhost:5252/api';
 document.addEventListener('DOMContentLoaded', async () => {
   clearErrors();
 
-  // 1) Ensure token and decode it
+ 
   const token = localStorage.getItem('token');
   if (!token) {
     window.location.href = 'userLogin.html?redirect=userProfileView.html';
@@ -22,18 +21,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // numeric userId from the JWT
+ 
   const userId = Number(payload.nameid ?? payload.sub);
   if (!userId) {
     showError('Invalid user ID in token.');
     return;
   }
 
-  // 2) Prefill the profile form
+ 
   document.getElementById('editName').value  = payload.unique_name || '';
   document.getElementById('editEmail').value = payload.email       || '';
 
-  // 3) Handle profile updates (unchanged)
+  
   document
     .getElementById('editProfileForm')
     .addEventListener('submit', async e => {
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-  // 4) Fetch and filter bookings
+  
   let allBookings = [];
   try {
     const res = await fetch(`${API_BASE_URL}/bookings`, {
@@ -71,14 +70,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Failed to load bookings');
 
-    // *** Filter for this user only ***
+   
     allBookings = data.filter(b => Number(b.userId) === userId);
   } catch (err) {
     showError(err.message);
     console.error(err);
   }
 
-  // 5) Render the filtered bookings
+ 
   const tbody = document.getElementById('bookings-body');
   tbody.innerHTML = '';
   if (allBookings.length === 0) {
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // 6) Delegate Cancel clicks
+  
   tbody.addEventListener('click', async e => {
     if (!e.target.classList.contains('cancel-booking')) return;
     const row       = e.target.closest('tr');

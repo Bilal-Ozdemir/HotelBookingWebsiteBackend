@@ -31,7 +31,7 @@ namespace BackEnd.Controllers
             _deleteBooking  = deleteBooking;
         }
 
-        // Helper to fetch & parse the user ID from JWT
+       
         private int GetCurrentUserId()
         {
             var raw = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

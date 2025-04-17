@@ -318,7 +318,7 @@ namespace BackEnd.Migrations
                     b.HasOne("BackEnd.Entities.User", "User")
                         .WithMany("Bookings")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("HotelRoom");

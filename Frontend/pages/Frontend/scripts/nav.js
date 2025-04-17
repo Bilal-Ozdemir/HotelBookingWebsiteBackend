@@ -1,52 +1,57 @@
-// Frontend/pages/Frontend/scripts/nav.js
+// /Frontend/scripts/nav.js
 document.addEventListener('DOMContentLoaded', () => {
-  const authSpan         = document.getElementById('authLinks');
-  const adminSpan        = document.getElementById('adminLink');
-  const profileSpan      = document.getElementById('userProfileLink');
-  if (!authSpan || !adminSpan || !profileSpan) {
-    console.warn('nav.js: missing #authLinks, #adminLink or #userProfileLink');
+  const authLinks   = document.getElementById('authLinks');
+  const adminLink   = document.getElementById('adminLink');
+  const profileLink = document.getElementById('userProfileLink');
+
+  if (!authLinks || !adminLink || !profileLink) {
+    console.warn('nav.js: missing required nav elements');
     return;
   }
 
+  // Always start with profile hidden
+  profileLink.hidden = true;
+
   const token = localStorage.getItem('token');
-  if (token) {
-    // Show Logout
-    authSpan.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
-    document
-      .getElementById('logoutLink')
-      .addEventListener('click', e => {
-        e.preventDefault();
-        localStorage.removeItem('token');
-        window.location.href = 'homePage.html';
-      });
-
-    // Show My Bookings
-    profileSpan.innerHTML = `<a href="userProfileView.html">My Bookings</a>`;
-
-    // Parse JWT payload safely
-    let payload = null;
-    try {
-      payload = JSON.parse(atob(token.split('.')[1]));
-    } catch (err) {
-      console.error('nav.js: invalid token payload', err);
-    }
-
-    // Show Admin links if role=Admin
-    if (payload && payload.role === 'Admin') {
-      adminSpan.innerHTML = `
-        <a href="adminDashBoard.html">Dashboard</a>
-        <a href="adminUsers.html">Users</a>
-      `;
-    } else {
-      adminSpan.innerHTML = '';
-    }
-  } else {
-    // Guest: show Login/Register
-    authSpan.innerHTML = `
+  if (!token) {
+    // Guest
+    authLinks.innerHTML = `
       <a href="userLogin.html">Login</a>
       <a href="userRegistration.html">Register</a>
     `;
-    profileSpan.innerHTML = '';
-    adminSpan.innerHTML   = '';
+    adminLink.innerHTML = '';
+    return;
+  }
+
+  // Logged in
+  authLinks.innerHTML = `<a href="#" id="logoutLink">Logout</a>`;
+  document
+    .getElementById('logoutLink')
+    .addEventListener('click', e => {
+      e.preventDefault();
+      localStorage.removeItem('token');
+      window.location.href = 'homePage.html';
+    });
+
+  // Decode JWT payload safely
+  let role = null;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    role = payload.role;
+  } catch {
+    console.warn('nav.js: invalid token payload');
+  }
+
+  if (role === 'Admin') {
+    // Admin gets only admin menu
+    adminLink.innerHTML = `
+      <a href="adminDashBoard.html">Dashboard</a>
+      <a href="adminUsers.html">Users</a>
+    `;
+  } else {
+    // Regular user gets “My Bookings”
+    profileLink.hidden = false;
+    profileLink.innerHTML = `<a href="userProfileView.html">My Bookings</a>`;
+    adminLink.innerHTML = '';
   }
 });

@@ -209,3 +209,15 @@
     margin: 1em 0;
     font-weight: bold;
   }
+  .users-table input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font: inherit;
+    padding: 4px;
+  }
+  .users-table input:disabled {
+    background: transparent;
+    color: inherit;
+  }
+  

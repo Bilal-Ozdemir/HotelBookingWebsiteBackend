@@ -9,3 +9,11 @@ BackEnd/BackEnd/obj/
 # Rider / VS Code things
 .vs/
 *.vscode/
+
+# Angular / frontend build outputs
+hotel-booking-frontend/dist/
+hotel-booking-frontend/.angular/
+hotel-booking-frontend/node_modules/
+hotel-booking-frontend/*.tsbuildinfo
+hotel-booking-frontend/**/*.js
+hotel-booking-frontend/**/*.map

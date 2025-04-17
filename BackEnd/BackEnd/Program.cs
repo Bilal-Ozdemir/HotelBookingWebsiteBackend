@@ -25,7 +25,7 @@ var connectionString  = config.GetConnectionString("DefaultConnection");
 const string corsPolicyName = "_allowFrontend";
 
 // 🔐 Validate required settings
-target: if (string.IsNullOrWhiteSpace(jwtKey) || jwtKey.Length < 32)
+if (string.IsNullOrWhiteSpace(jwtKey) || jwtKey.Length < 32)
     throw new InvalidOperationException("JWT Key must be at least 32 characters long");
 if (string.IsNullOrWhiteSpace(connectionString))
     throw new InvalidOperationException("Missing connection string.");
@@ -35,12 +35,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(connectionString)
 );
 
-// Use IdentityCore (JWT-only, no cookies)
 builder.Services
-    .AddIdentityCore<Admin>(opts =>
-    {
-        // password, lockout etc. settings
-    })
+    .AddIdentityCore<Admin>(opts => {})
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
@@ -135,7 +131,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// 🔹 Controllers + JSON config
 builder.Services.AddControllers()
     .AddJsonOptions(opt =>
     {
@@ -151,7 +146,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Global exception handler → always JSON on errors
 app.UseExceptionHandler(errApp =>
 {
     errApp.Run(async context =>
@@ -179,6 +173,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await db.Database.MigrateAsync();
+    await AppDbContext.SeedAdmin(scope.ServiceProvider); // ✅ Seed admin user at runtime
 }
 
 app.Run();

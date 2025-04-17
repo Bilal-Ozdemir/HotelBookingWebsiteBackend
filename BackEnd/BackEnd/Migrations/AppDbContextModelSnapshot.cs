@@ -17,7 +17,7 @@ namespace BackEnd.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -52,37 +52,6 @@ namespace BackEnd.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("BackEnd.Entities.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CustomerFirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerLastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("BackEnd.Entities.HotelRoom", b =>
@@ -307,6 +276,10 @@ namespace BackEnd.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -321,6 +294,7 @@ namespace BackEnd.Migrations
                             Id = 1,
                             Email = "alice@example.com",
                             PasswordHash = "AQAAAAEAACcQAAAAEFakeHashAlice==",
+                            Role = "User",
                             Username = "alice"
                         },
                         new
@@ -328,6 +302,7 @@ namespace BackEnd.Migrations
                             Id = 2,
                             Email = "bob@example.com",
                             PasswordHash = "AQAAAAEAACcQAAAAEFakeHashBob==",
+                            Role = "User",
                             Username = "bob"
                         });
                 });
@@ -347,17 +322,6 @@ namespace BackEnd.Migrations
                         .IsRequired();
 
                     b.Navigation("HotelRoom");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BackEnd.Entities.Contact", b =>
-                {
-                    b.HasOne("BackEnd.Entities.User", "User")
-                        .WithOne("Contact")
-                        .HasForeignKey("BackEnd.Entities.Contact", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -410,9 +374,6 @@ namespace BackEnd.Migrations
             modelBuilder.Entity("BackEnd.Entities.User", b =>
                 {
                     b.Navigation("Bookings");
-
-                    b.Navigation("Contact")
-                        .IsRequired();
 
                     b.Navigation("Payments");
                 });

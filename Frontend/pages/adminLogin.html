@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./../styles/global.css" />
+  <title>Admin Login</title>
+</head>
+<body>
+  <div id="admin-login" class="container">
+    <nav class="navbar">
+      <div class="logo">Hotel Management</div>
+    </nav>
+    <div class="card">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label for="admin-email">Email or Username</label>
+          <input type="text" id="admin-email" required />
+        </div>
+        <div class="form-group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("adminLoginForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const usernameOrEmail = document.getElementById("admin-email").value.trim();
+      const password = document.getElementById("admin-password").value;
+
+      try {
+        const res = await fetch("http://localhost:5252/api/admin/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+          email: usernameOrEmail,
+          password
+          })
+
+        });
+
+        const result = await res.json();
+        if (!res.ok) {
+          return alert(result.error || "Admin login failed");
+        }
+
+        // store JWT and redirect
+        localStorage.setItem("token", result.token);
+        window.location.href = "adminDashBoard.html";
+      } catch (err) {
+        alert("Error: " + err.message);
+      }
+    });
+  </script>
+</body>
+</html>

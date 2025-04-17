@@ -2,6 +2,9 @@
 using BackEnd.UseCases.HotelRooms;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace BackEnd.Controllers
 {
@@ -49,6 +52,7 @@ namespace BackEnd.Controllers
 
         // ✅ POST: /api/hotelroom
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> CreateHotelRoom([FromBody] HotelRoom hotelRoom)
         {
             var created = await _createHotelRoom.Execute(hotelRoom);
@@ -57,6 +61,7 @@ namespace BackEnd.Controllers
 
         // ✅ PUT: /api/hotelroom/5
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> UpdateHotelRoom(int id, [FromBody] HotelRoom updatedRoom)
         {
             try
@@ -76,6 +81,7 @@ namespace BackEnd.Controllers
 
         // ✅ DELETE: /api/hotelroom/5
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> DeleteHotelRoom(int id)
         {
             try

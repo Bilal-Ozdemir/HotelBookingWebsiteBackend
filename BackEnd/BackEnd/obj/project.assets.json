@@ -5079,23 +5079,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Josh\\.nuget\\packages\\": {},
+    "C:\\Users\\faiyz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
-      "packagesPath": "C:\\Users\\Josh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Josh\\Documents\\GitHub\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\obj\\",
+      "projectPath": "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "packagesPath": "C:\\Users\\faiyz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\faiyz\\Desktop\\git_exercise\\Nimbus\\HotelBookingWebsiteBackend\\BackEnd\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Josh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\faiyz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5120,7 +5120,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -5184,7 +5184,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

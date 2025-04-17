@@ -7,14 +7,14 @@
   <title>My Bookings</title>
 </head>
 <body>
-  <!-- Redirect if not logged in -->
+ 
   <script>
     if (!localStorage.getItem('token')) {
       window.location.href = 'userLogin.html?redirect=userProfileView.html';
     }
   </script>
 
-  <!-- Shared nav -->
+  
   <nav class="navbar">
     <div class="logo">Hotel Management</div>
     <div class="nav-links">
@@ -28,7 +28,7 @@
     </div>
   </nav>
 
-  <!-- Inline errors -->
+  
   <div id="errorMessages" class="error-messages"></div>
 
   <div class="container">
@@ -66,7 +66,7 @@
     </div>
   </div>
 
-  <!-- Shared scripts -->
+ 
   <script type="module" src="./Frontend/scripts/errors.js"></script>
   <script type="module" src="./Frontend/scripts/userProfile.js"></script>
   <script type="module" src="./Frontend/scripts/nav.js"></script>

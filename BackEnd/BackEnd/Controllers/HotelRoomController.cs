@@ -37,20 +37,20 @@ namespace BackEnd.Controllers
         {
             try
             {
-                var hotelRooms = await _getHotelRooms.Execute(); // This is where it crashes
+                var hotelRooms = await _getHotelRooms.Execute();
                 return Ok(hotelRooms);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("🔥 ERROR loading hotel rooms:");
                 Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace); // ✅ full trace
+                Console.WriteLine(ex.StackTrace); 
                 return StatusCode(500, "Server error: " + ex.Message);
             }
         }
 
 
-        // ✅ POST: /api/hotelroom
+        
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> CreateHotelRoom([FromBody] HotelRoom hotelRoom)
@@ -59,7 +59,7 @@ namespace BackEnd.Controllers
             return CreatedAtAction(nameof(GetHotelRoom), new { id = created.Id }, created);
         }
 
-        // ✅ PUT: /api/hotelroom/5
+        
         [HttpPut("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> UpdateHotelRoom(int id, [FromBody] HotelRoom updatedRoom)
@@ -79,7 +79,7 @@ namespace BackEnd.Controllers
             }
         }
 
-        // ✅ DELETE: /api/hotelroom/5
+        
         [HttpDelete("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> DeleteHotelRoom(int id)

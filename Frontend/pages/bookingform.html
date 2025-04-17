@@ -7,15 +7,15 @@
   <title>Booking Form</title>
 </head>
 <body>
-  <!-- 1. Redirect if not logged in -->
+  
   <script>
     if (!localStorage.getItem('token')) {
-      // send to login, then come back here
+      
       window.location.href = 'userLogin.html?redirect=bookingform.html';
     }
   </script>
 
-  <!-- 2. Shared nav -->
+
   <nav class="navbar">
     <div class="logo">Hotel Management</div>
     <div class="nav-links">
@@ -24,7 +24,7 @@
       <a href="bookingform.html">Book</a>
       <a href="contactPage.html">Contact</a>
       <span id="userProfileLink"></span>
-      <!-- auth links will be replaced by nav.js -->
+      
       <span id="authLinks">
         <a href="userLogin.html">Login</a>
         <a href="userRegistration.html">Register</a>
@@ -33,10 +33,10 @@
     </div>
   </nav>
 
-  <!-- 3. Booking card -->
+  
   <div class="card container">
     <h2>Book Your Stay</h2>
-    <!-- error container -->
+    
     <div id="errorMessages" class="error-messages"></div>
 
     <form id="bookingForm">
@@ -70,7 +70,7 @@
     </form>
   </div>
 
-  <!-- 4. Load shared scripts -->
+  
   <script type="module" src="./Frontend/scripts/errors.js"></script>
   <script type="module" src="./Frontend/scripts/booking.js"></script>
   <script type="module" src="./Frontend/scripts/nav.js"></script>

@@ -1,5 +1,4 @@
-﻿// BackEnd/Controllers/PaymentController.cs
-using BackEnd.DTOs;
+﻿using BackEnd.DTOs;
 using BackEnd.Entities;
 using BackEnd.UseCases.Payments;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -23,16 +22,16 @@ namespace BackEnd.Controllers
             _createPayment = createPayment;
         }
 
-        // POST: api/payment
+       
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] PaymentRequestDto request)
         {
-            // parse user ID from token
+            
             var claim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (claim == null || !int.TryParse(claim.Value, out var userId))
                 return Unauthorized(new { error = "Invalid or missing token." });
 
-            // Map DTO → entity
+            
             var paymentEntity = new Payment
             {
                 BookingId     = request.BookingId,
@@ -58,12 +57,12 @@ namespace BackEnd.Controllers
             }
             catch (ArgumentException ex)
             {
-                // Known bad input (e.g. booking not found)
+                
                 return BadRequest(new { error = ex.Message });
             }
             catch (Exception ex)
             {
-                // Anything else becomes a JSON 500
+                
                 return StatusCode(500, new 
                 { 
                     error   = "Internal server error",
@@ -72,7 +71,7 @@ namespace BackEnd.Controllers
             }
         }
 
-        // GET: api/payment/{id}
+       
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id, [FromServices] GetPayment getPayment)
         {

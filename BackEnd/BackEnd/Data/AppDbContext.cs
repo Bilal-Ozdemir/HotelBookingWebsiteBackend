@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Entities;
-using Microsoft.AspNetCore.Identity; // Needed for PasswordHasher
+using Microsoft.AspNetCore.Identity; 
 
 namespace BackEnd.Data
 {
@@ -71,13 +71,13 @@ namespace BackEnd.Data
                 new HotelRoom { Id = 15, RoomNumber = "305", RoomTypeId = 3, Price = 250m }
             );
 
-            // Seed regular users (with fake hashes)
+           
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, Username = "alice", Email = "alice@example.com", PasswordHash = "AQAAAAEAACcQAAAAEFakeHashAlice==", Role = "User" },
                 new User { Id = 2, Username = "bob", Email = "bob@example.com", PasswordHash = "AQAAAAEAACcQAAAAEFakeHashBob==", Role = "User" }
             );
 
-            // Admin will be seeded at runtime via service
+            
         }
 
         public static async Task SeedAdmin(IServiceProvider services)

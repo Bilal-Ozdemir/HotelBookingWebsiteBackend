@@ -1,4 +1,3 @@
-// BookingDto.cs
 public class BookingDto
 {
     public int    Id            { get; set; }
@@ -9,7 +8,7 @@ public class BookingDto
     public bool   IsPaid        { get; set; }
 }
 
-// PaymentRequestDto.cs
+
 public class PaymentRequestDto
 {
     public int     BookingId { get; set; }

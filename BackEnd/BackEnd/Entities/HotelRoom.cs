@@ -8,9 +8,9 @@ namespace BackEnd.Entities
         public string RoomNumber { get; set; }
         public int RoomTypeId { get; set; }
 
-        public decimal Price { get; set; } // ✅ Add this
-        public RoomType RoomTypes { get; set; } // ✅ Navigation property
+        public decimal Price { get; set; } 
+        public RoomType RoomTypes { get; set; } 
 
-        public ICollection<Booking> Bookings { get; set; } // ✅ Add this
+        public ICollection<Booking> Bookings { get; set; } 
     }
 }

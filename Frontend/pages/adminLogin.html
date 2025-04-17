@@ -53,7 +53,7 @@
           return alert(result.error || "Admin login failed");
         }
 
-        // store JWT and redirect
+       
         localStorage.setItem("token", result.token);
         window.location.href = "adminDashBoard.html";
       } catch (err) {

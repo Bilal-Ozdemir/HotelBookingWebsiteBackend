@@ -28,7 +28,7 @@
     padding: 20px;
   }
   
-  /* NAVBAR */
+ 
   .navbar {
     position: sticky;
     top: 0;
@@ -74,7 +74,7 @@
     width: 100%;
   }
   
-  /* CARDS & PANELS */
+ 
   .card,
   .dashboard-card,
   .feature-card,

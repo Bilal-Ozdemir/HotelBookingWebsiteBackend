@@ -19,11 +19,11 @@ namespace BackEnd.Controllers
         public UsersController(AppDbContext context)
             => _context = context;
 
-        // GET: api/users/{id}
+       
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
-            // ensure the user is only fetching their own profile
+            
             var currentId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (currentId != id)
                 return Forbid();
@@ -41,11 +41,11 @@ namespace BackEnd.Controllers
             });
         }
 
-        // PUT: api/users/{id}
+        
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UserUpdateDto dto)
         {
-            // make sure they can only update their own profile
+           
             var currentId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (currentId != id)
                 return Forbid();

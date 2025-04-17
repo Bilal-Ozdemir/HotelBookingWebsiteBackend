@@ -13,10 +13,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using BackEnd.Services;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 Configuration
+
 var config            = builder.Configuration;
 var jwtKey            = config["Jwt:Key"];
 var jwtIssuer         = config["Jwt:Issuer"];
@@ -24,13 +26,13 @@ var jwtAudience       = config["Jwt:Audience"];
 var connectionString  = config.GetConnectionString("DefaultConnection");
 const string corsPolicyName = "_allowFrontend";
 
-// 🔐 Validate required settings
+
 if (string.IsNullOrWhiteSpace(jwtKey) || jwtKey.Length < 32)
     throw new InvalidOperationException("JWT Key must be at least 32 characters long");
 if (string.IsNullOrWhiteSpace(connectionString))
     throw new InvalidOperationException("Missing connection string.");
 
-// 🔹 Services
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(connectionString)
 );
@@ -41,7 +43,7 @@ builder.Services
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// 🔐 JWT Authentication
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -75,7 +77,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// 🔹 Dependency Injection
+
 builder.Services.AddScoped<RegisterUser>();
 builder.Services.AddScoped<LoginUser>();
 builder.Services.AddScoped<GenerateJwtToken>();
@@ -91,7 +93,7 @@ builder.Services.AddScoped<GetMyBookings>();
 builder.Services.AddScoped<DeleteBooking>();
 builder.Services.AddScoped<CreatePayment>();
 
-// 🌐 CORS
+
 builder.Services.AddCors(opts =>
 {
     opts.AddPolicy(corsPolicyName, policy =>
@@ -107,7 +109,7 @@ builder.Services.AddCors(opts =>
     });
 });
 
-// 🔎 Swagger
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -141,6 +143,9 @@ builder.Services.AddControllers()
         opt.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
         opt.JsonSerializerOptions.WriteIndented      = true;
     });
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 var app = builder.Build();
 
@@ -177,7 +182,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await db.Database.MigrateAsync();
-    await AppDbContext.SeedAdmin(scope.ServiceProvider); // ✅ Seed admin user at runtime
+    await AppDbContext.SeedAdmin(scope.ServiceProvider); 
 }
 
 app.Run();
